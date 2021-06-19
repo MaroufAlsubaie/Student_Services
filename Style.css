@@ -116,15 +116,14 @@ p{
   form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid grey;
+    border: 1px solid #8a5612e5;
     float: left;
     width: 60%;
-    background: radial-gradient(#fff,#f5c07a3b) ;
+    background:#fff6e9e5 ;
     margin-left: 150px;
   }
   
   form.example button {
-    
 
     float: left;
     width: 10%;
@@ -132,7 +131,7 @@ p{
     background: #c586339d;
     color: white;
     font-size: 17px;
-    border: 1px solid grey;
+    border: 1px solid #8a5612e5;
     border-left: none;
     cursor: pointer;
     transition: background .7s ;
