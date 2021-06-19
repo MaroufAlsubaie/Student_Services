@@ -33,7 +33,7 @@ p{
     color: rgb(170, 93, 5);
 }
 .container{
-    width: 1600px;
+    width: 100%;
     margin: auto;
     padding-left: 15px;
     padding-right: 15px;
