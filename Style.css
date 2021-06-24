@@ -12,6 +12,23 @@ body {
     align-items: center;
     padding: 20px;
 }
+.search_box {
+    float: center;
+    align-items: center;
+  }
+.search_box button{
+    float: center;
+    align-items: center;
+    margin-top: auto;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  .search_box button:hover {
+    background: #ccc;
+    align-items: center;
+  }
 nav{
     flex: 1;
     text-align: right;
@@ -63,7 +80,7 @@ p{
     margin: 30px 0;
     padding: 10px 35px;
     border-radius: 20px;
-    transition: background .7s ;
+    transition:  .7s ;
 }
 .bottun:hover{
     background: rgb(119, 65, 3);
@@ -75,10 +92,12 @@ p{
     flex-basis: 30%;
     min-width: 250px;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 .col-3 img{
     width: 100%;
-
+    width: 316px;
+    height: 475px;
 }
 .container2{
     max-width: 1080px;
@@ -92,3 +111,41 @@ p{
     margin: 25px 0;
     padding-left: 20px;
 }
+
+
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #8a5612e5;
+    float: left;
+    width: 60%;
+    background:#fff6e9e5 ;
+    margin-left: 150px;
+  }
+  
+  form.example button {
+
+    float: left;
+    width: 10%;
+    padding: 2.5px;
+    background: #c586339d;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #8a5612e5;
+    border-left: none;
+    cursor: pointer;
+    transition:  .7s ;
+  }
+  form.example button img {
+      width: 30%;
+  }
+  
+  form.example button:hover {
+    background: #8f54079d;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
