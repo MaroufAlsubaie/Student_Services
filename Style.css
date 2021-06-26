@@ -63,7 +63,7 @@ p{
 }
 .col-2{
     flex-basis: 50%;
-    min-width: none;
+    min-width: 300px;
 }
 .col-2 h1{
     font-size: 40px;
@@ -149,3 +149,43 @@ p{
     clear: both;
     display: table;
   }
+ .item{
+     margin-top: 80px;
+ }
+ .item img{
+    width: 100%;
+    width: 474px;
+    height: 700px;
+    padding: 0;
+}
+.col-4{
+    flex-basis: 50%;
+    min-width: 300px;
+    padding: 20px;
+}
+.col-4 h1{
+    font-size: 40px;
+    line-height: 100px;
+    margin: 25px 0;
+}
+.col-4 p{
+    font-size: 18px;
+    margin: 25px 0;
+    color: black;
+}
+.col-4 h4{
+    font-size: 22px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+.item input{
+    width: 55px;
+    height: 40px;
+    padding-left: 20px;
+    font-size: 20px;
+    margin-right: 7px;
+    border: 1px solid #8a5612e5;
+}
+input:foucs{
+    outline: none;
+}
