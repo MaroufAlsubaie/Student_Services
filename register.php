@@ -13,16 +13,16 @@
     <div class="headbackground">
         <div class="wrapper">
           <header>التسجيل </header>
-          <form action="#">
+          <form action="sinup-inc.php" method="POST">
             <div class="field email">
                 <div class="input-area">
-                    <input type="text" placeholder="اسم المستخدم" />
+                    <input type="text" name="name" placeholder="اسم المستخدم" />
                   </div>
             </div>
 
             <div class="field email">
               <div class="input-area">
-                <input type="text" placeholder="البريد الالكتروني" />
+                <input type="text" name="email" placeholder="البريد الالكتروني" />
                 <i class="icon fas fa-envelope"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
@@ -31,7 +31,7 @@
 
             <div class="field password">
               <div class="input-area">
-                <input type="password" placeholder="الرقم السري" />
+                <input type="password" name="pas" placeholder="الرقم السري" />
                 <i class="icon fas fa-lock"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
@@ -39,7 +39,7 @@
 
               <div class="field password">
                 <div class="input-area">
-                  <input type="password" placeholder="اعادة الرقم السري" />
+                  <input type="password" name="pas-rep" placeholder="اعادة الرقم السري" />
                   <i class="icon fas fa-lock"></i>
                   <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
@@ -47,7 +47,7 @@
               <div class="error error-txt">Password can't be blank</div>
             </div>
             <div class="pass-txt"><a href="#">نسيت رقمك السري؟</a></div>
-            <input type="submit" value="تسخيل حساب" />
+            <input type="submit" name="sup" value="تسجيل حساب" />
           </form>
           <div class="sign-txt">عندك حساب ؟ <a href="login.html">سجل دخولك</a></div>
         </div>
