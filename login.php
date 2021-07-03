@@ -32,7 +32,7 @@
           <div class="pass-txt"><a href="#">نسيت رقمك السري؟</a></div>
           <input type="submit" value="تسجيل الدخول" />
         </form>
-        <div class="sign-txt">عضو جديد ؟ <a href="register.html">سجل الان</a></div>
+        <div class="sign-txt">عضو جديد ؟ <a href="register.php">سجل الان</a></div>
       </div>
     </div>
   </body>

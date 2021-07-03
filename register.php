@@ -49,7 +49,7 @@
             <div class="pass-txt"><a href="#">نسيت رقمك السري؟</a></div>
             <input type="submit" name="sup" value="تسجيل حساب" />
           </form>
-          <div class="sign-txt">عندك حساب ؟ <a href="login.html">سجل دخولك</a></div>
+          <div class="sign-txt">عندك حساب ؟ <a href="login.php">سجل دخولك</a></div>
         </div>
       </div>
   </body>

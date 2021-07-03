@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>STUDENT Service | Project of CTI Student</title> 
-        <link rel="stylesheet" href="Style.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="headbackground">
-        <div class="container"> 
-            <div class="bar">
-                <div class="logo">
-                    <a href="Ui.html"><img src="images/logo_transparent22-removebg.png" width="300px"></a>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="Ui.html">الصفحة الرئيسة</a></li>
-                        <li><a href="Product.html">المنتجات</a></li>
-                        <li><a href="">تعرف علينا اكثر</a></li>
-                        <li><a href="">الدعم الفني</a></li>
-                    </ul>
-                </nav>
-                    <a href="login.html"><img src="images/account.png" width= 35px></a>
-                
-                    <a href=""><img src="images/cart.png" width= 35px></a>
-            </div>
-        </div>
+<?php
+    include_once 'header.php';
+?>
         
              <div class="container2">
 
@@ -42,50 +16,50 @@
                     
                     
                       <div class="col-3">
-                         <a href="item1.html"><img src="images/book_1.png"></a>
+                         <a href="item1.php"><img src="images/book_1.png"></a>
                          <h4>خراب كتاب عن الامل </h4>
                          <p>60.0 ريال</p>
                       </div>
                           <div class="col-3">
-                              <a href="item2.html"><img src="images/book6.jpg"></a>  
+                              <a href="item2.php"><img src="images/book6.jpg"></a>  
                               <h4>طريق السعادة</h4>
                               <p>79.0 ريال</p>
                            </div>
                     
                          <div class="col-3">
-                           <a href="item3.html"><img src="images/book3.jpg"></a>
+                           <a href="item3.php"><img src="images/book3.jpg"></a>
                             <h4>نجاحك في صباحك</h4>
                             <p>80.0 ريال</p>
                     </div>
                     <div class="col-3">
-                        <a href="item4.html"><img src="images/got.jpg"></a>
+                        <a href="item4.php"><img src="images/got.jpg"></a>
                          <h4>صراع العروش</h4>
                          <p>90.0 ريال</p>
                  </div>
     
                  <div class="col-3">
-                    <a href="item5.html"><img src="images/mo.jpg"></a>
+                    <a href="item5.php"><img src="images/mo.jpg"></a>
                      <h4>قائد التغيير</h4>
                      <p>150.0 ريال</p>
              </div>
     
              <div class="col-3">
-                <a href="item6.html"><img src="images/crime.jpg"></a>
+                <a href="item6.php"><img src="images/crime.jpg"></a>
                  <h4>‎99 جريمة حقيقية هزت أركان المجتمع‎</h4>
                  <p>66.0 ريال</p>
             </div>
             <div class="col-3">
-                <a href="item7.html"><img src="images/1.gif"></a>
+                <a href="item7.php"><img src="images/1.gif"></a>
                  <h4>‎التبولوجيا العامة</h4>
                  <p>70.0 ريال</p>
             </div>
             <div class="col-3">
-                <a href="item8.html"><img src="images/english.jpg"></a>
+                <a href="item8.php"><img src="images/english.jpg"></a>
                  <h4>قواعد انجليزي‎</h4>
                  <p>50.0 ريال</p>
             </div>
             <div class="col-3">
-                <a href="item9.html"><img src="images/الاتصالات المتنقلة pdf عملي.jpg"></a>
+                <a href="item9.php"><img src="images/الاتصالات المتنقلة pdf عملي.jpg"></a>
                  <h4>الاتصالات المتنقلة‎</h4>
                  <p>40.0 ريال</p>
             </div>
