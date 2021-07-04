@@ -13,7 +13,7 @@
     <div class="headbackground">
         <div class="wrapper">
           <header>التسجيل </header>
-          <form action="sinup-inc.php" method="POST">
+          <form action="inc/signup-inc.php" method="POST">
             <div class="field email">
                 <div class="input-area">
                     <input type="text" name="name" placeholder="اسم المستخدم" />
@@ -31,7 +31,7 @@
 
             <div class="field password">
               <div class="input-area">
-                <input type="password" name="pas" placeholder="الرقم السري" />
+                <input type="text" name="pas" placeholder="الرقم السري" />
                 <i class="icon fas fa-lock"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
@@ -39,14 +39,13 @@
 
               <div class="field password">
                 <div class="input-area">
-                  <input type="password" name="pas-rep" placeholder="اعادة الرقم السري" />
+                  <input type="text" name="pasRep" placeholder="اعادة الرقم السري" />
                   <i class="icon fas fa-lock"></i>
                   <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 
               <div class="error error-txt">Password can't be blank</div>
             </div>
-            <div class="pass-txt"><a href="#">نسيت رقمك السري؟</a></div>
             <input type="submit" name="sup" value="تسجيل حساب" />
           </form>
           <div class="sign-txt">عندك حساب ؟ <a href="login.php">سجل دخولك</a></div>
