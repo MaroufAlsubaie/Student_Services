@@ -1,3 +1,8 @@
+<?php
+session_start();
+$name = $_SESSION["usersName"]
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,6 +27,12 @@
                         <li><a href="">الدعم الفني</a></li>
                     </ul>
                 </nav>
+                <?php
+                if (isset($_SESSION["usersId"])){
+                    echo "$name";
+                }
+                //else{}
+                ?>
                     <a href="login.php"><img src="images/account.png" width= 35px></a>
                 
                     <a href=""><img src="images/cart.png" width= 35px></a>
