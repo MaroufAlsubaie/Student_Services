@@ -1,4 +1,5 @@
 <?php
+require 'inc/dbh-inc.php';
 session_start();
 $name = $_SESSION["usersName"]
 ?>

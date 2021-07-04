@@ -1,6 +1,5 @@
 <?php
     include_once 'header.php';
-    $conn = mysqli_connect("localhost","root","", "student service");
 ?>
     <form class="example" action="/action_page.php" style="width: 1080px; ; margin-left: 435px; padding-right: 30px;">
         <input type="text" name="search" style="padding: 10px;">
