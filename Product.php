@@ -1,6 +1,5 @@
 <?php
     include_once 'header.php';
-    $conn = mysqli_connect("localhost","root","", "student service");
 ?>
         
              <div class="container2">

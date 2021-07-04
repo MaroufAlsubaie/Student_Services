@@ -1,8 +1,6 @@
 <?php
     include_once 'header.php';
-    $conn = mysqli_connect("localhost","root","","student service");
-    session_start();
-
+    
     if (isset($_POST["add"])){
         if (isset($_SESSION["cart"])){
             $item_array_id = array_column($_SESSION["cart"],"ID");
