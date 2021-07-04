@@ -1,7 +1,6 @@
 <?php
 require 'inc/dbh-inc.php';
 session_start();
-$name = $_SESSION["usersName"]
 ?>
 
 <!DOCTYPE html>
@@ -30,12 +29,13 @@ $name = $_SESSION["usersName"]
                 </nav>
                 <?php
                 if (isset($_SESSION["usersId"])){
-                    echo "$name";
+                    echo $_SESSION["usersName"];
+                    echo "<a href='inc/logout.php'><img src='images/account.png' width= 35px></a>";
                 }
-                //else{}
-                ?>
-                    <a href="login.php"><img src="images/account.png" width= 35px></a>
-                
+                else{
+                    echo "<a href='login.php'><img src='images/account.png' width= 35px></a>";
+                }
+                ?>                
                     <a href="cart.php"><img src="images/cart.png" width= 35px></a>
             </div>
         </div>

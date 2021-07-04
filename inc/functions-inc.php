@@ -66,7 +66,7 @@ function createUser($conn, $name, $email, $pas) {
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../register.php?error=none");
+    header("location: ../login.php?error=none");
     exit();
 }
 
