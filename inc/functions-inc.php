@@ -69,3 +69,34 @@ function createUser($conn, $name, $email, $pas) {
     header("location: ../register.php?error=none");
     exit();
 }
+
+function emptyInputlogin($name, $pass) {
+    $result;
+    if (empty($name) || empty($pass))$result = true;
+    else $result = false;
+    return $result;
+}
+
+function loginUser($conn, $name, $pass){
+    $nameExitsts = nameExists($conn, $name);
+
+    if ($nameExitsts == false){
+        header("location: ../login.php?error=wronglogin1");
+        exit();
+    }
+
+    $hashedpass = $nameExitsts["usersPass"];
+    $checkpass = password_verify($pass, $hashedpass);
+
+    if ($checkpass == false){
+        header("location: ../login.php?error=wronglogin2");
+        exit();
+    }
+    else if ($checkpass == true){
+        session_start();
+        $_SESSION["usersId"] = $nameExitsts["usersId"];
+        $_SESSION["usersName"] = $nameExitsts["usersName"];
+        header("location: ../ui.php");
+        exit();
+    }
+}
