@@ -24,6 +24,6 @@
                 </nav>
                     <a href="login.php"><img src="images/account.png" width= 35px></a>
                 
-                    <a href=""><img src="images/cart.png" width= 35px></a>
+                    <a href="cart.php"><img src="images/cart.png" width= 35px></a>
             </div>
         </div>

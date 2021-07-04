@@ -1,5 +1,6 @@
 <?php
     include_once 'header.php';
+    $conn = mysqli_connect("localhost","root","", "student service");
 ?>
         
              <div class="container2">
@@ -14,58 +15,31 @@
                  <div class="goods">
                    <div class="row">
                     
-                    
-                      <div class="col-3">
-                         <a href="item1.php"><img src="images/book_1.png"></a>
-                         <h4>خراب كتاب عن الامل </h4>
-                         <p>60.0 ريال</p>
-                      </div>
-                          <div class="col-3">
-                              <a href="item2.php"><img src="images/book6.jpg"></a>  
-                              <h4>طريق السعادة</h4>
-                              <p>79.0 ريال</p>
-                           </div>
-                    
-                         <div class="col-3">
-                           <a href="item3.php"><img src="images/book3.jpg"></a>
-                            <h4>نجاحك في صباحك</h4>
-                            <p>80.0 ريال</p>
-                    </div>
+                   <?php 
+                    $query ="SELECT * FROM product ORDER BY id ASC ";
+                    $result = mysqli_query($conn,$query);
+
+
+                    while($row = mysqli_fetch_assoc($result)) {?>
                     <div class="col-3">
-                        <a href="item4.php"><img src="images/got.jpg"></a>
-                         <h4>صراع العروش</h4>
-                         <p>90.0 ريال</p>
-                 </div>
-    
-                 <div class="col-3">
-                    <a href="item5.php"><img src="images/mo.jpg"></a>
-                     <h4>قائد التغيير</h4>
-                     <p>150.0 ريال</p>
-             </div>
-    
-             <div class="col-3">
-                <a href="item6.php"><img src="images/crime.jpg"></a>
-                 <h4>‎99 جريمة حقيقية هزت أركان المجتمع‎</h4>
-                 <p>66.0 ريال</p>
-            </div>
-            <div class="col-3">
-                <a href="item7.php"><img src="images/1.gif"></a>
-                 <h4>‎التبولوجيا العامة</h4>
-                 <p>70.0 ريال</p>
-            </div>
-            <div class="col-3">
-                <a href="item8.php"><img src="images/english.jpg"></a>
-                 <h4>قواعد انجليزي‎</h4>
-                 <p>50.0 ريال</p>
-            </div>
-            <div class="col-3">
-                <a href="item9.php"><img src="images/الاتصالات المتنقلة pdf عملي.jpg"></a>
-                 <h4>الاتصالات المتنقلة‎</h4>
-                 <p>40.0 ريال</p>
-            </div>
-                    
+                        <div class="image">
+                        <form method="post" action="cart.php?id=<?=$row['ID']?>">
+                        <a href=<?=$row['src'];?>><img src="images/<?=$row['photo']?>"></a>
+                        <h4><?=$row['Name']; ?></h4>
+                        <p><?=$row['price'];?> ريال</p>
+                        <input type="number" name="quantity" class="input1" value="1">
+                        <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]?>">
+                        <input type="hidden" name="hidden_price" value="<?php echo $row["price"]?>">
+                        <input type="submit" name="add" class="bottun1" value="اضف الى السلة">
+                    </div>
+                    </form>
+                    </div>
+                    <?php } 
+
+                    ?> 
                 </div>
              </div>
+            
         </div>
     </body>
 </html>
