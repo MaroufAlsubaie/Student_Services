@@ -23,8 +23,8 @@
                     <div class="col-3">
                         <div class="image">
                         <form method="post" action="cart.php?id=<?=$row['ID']?>">
-                        <a href=<?=$row['src'];?>><img src="images/<?=$row['photo']?>"></a>
-                        <h4><?=$row['Name']; ?></h4>
+                        <img src="images/<?=$row['photo']?>">
+                        <h4><?=$row['Name'];?></h4>
                         <p><?=$row['price'];?> ريال</p>
                         <input type="number" name="quantity" class="input1" value="1">
                         <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]?>">
