@@ -23,7 +23,7 @@ function invalidEmail($email) {
 
 function passMatch($pas, $pasRep) {
     $result;
-    if ($pass !== $pasRep) $result = true;
+    if ($pas !== $pasRep) $result = true;
     else $result = false;
     return $result;
 }
@@ -32,7 +32,7 @@ function nameExists($conn, $name) {
     $sql = "SELECT * FROM users WHERE usersName = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailed1");
+        header("location: ../register.php?error=stmtfailed");
         exit();
     }
 
@@ -56,7 +56,7 @@ function createUser($conn, $name, $email, $pas) {
     $sql = "INSERT INTO users (usersName, usersEmail, usersPass) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../register.php?error=stmtfailed2");
+        header("location: ../register.php?error=stmtfailed");
         exit();
     }
 
@@ -81,7 +81,7 @@ function loginUser($conn, $name, $pass){
     $nameExitsts = nameExists($conn, $name);
 
     if ($nameExitsts == false){
-        header("location: ../login.php?error=wronglogin1");
+        header("location: ../login.php?error=wronglogin");
         exit();
     }
 
@@ -89,7 +89,7 @@ function loginUser($conn, $name, $pass){
     $checkpass = password_verify($pass, $hashedpass);
 
     if ($checkpass == false){
-        header("location: ../login.php?error=wronglogin2");
+        header("location: ../login.php?error=wronglogin");
         exit();
     }
     else if ($checkpass == true){
