@@ -100,3 +100,26 @@ function loginUser($conn, $name, $pass){
         exit();
     }
 }
+
+function emptyimpot($contry, $ctiy, $street, $pin, $phoneNum) {
+    $result;
+    if (empty($contry) || empty($ctiy)|| empty($street)|| empty($pin)|| empty($phoneNum))$result = true;
+    else $result = false;
+    return $result;
+}
+
+function createAddress($conn, $usersId, $contry, $ctiy, $street, $pin, $phoneNum) {
+    $sql = "INSERT INTO address (usersId, contry, ctiy, street, pin, phoneNum) VALUES (?, ?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../address.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "isssii", $usersId, $contry, $ctiy, $street, $pin, $phoneNum);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../address.php?error=none");
+    exit();
+}
