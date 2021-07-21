@@ -6,7 +6,7 @@ if (isset($_POST["sup"])){
     $street = $_POST["street"];
     $pin = $_POST["pin"];
     $phoneNum = $_POST["phoneNum"];
-    $usersId = $_SESSION["usersName"];
+    $usersId = $_SESSION["usersId"];
 
     require 'dbh-inc.php';
     require 'functions-inc.php';
