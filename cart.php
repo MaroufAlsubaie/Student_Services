@@ -81,7 +81,7 @@
                     <th class="th"><?php echo number_format($total, 2);?>ريال</th>
                     <?php
                 if (isset($_SESSION["usersId"])){
-                    echo "<td class='th'><a href='checkout.php'><span class='text-danger'>Checkout</span></a></td>";
+                    echo "<td class='th'><a href='address.php'><span class='text-danger'>Checkout</span></a></td>";
                 }
                 else{
                     echo "<td class='th'><a href='login.php'><span class='text-danger'>Checkout</span></a></td>";

@@ -21,7 +21,7 @@ if (isset($_POST["sup"])){
         header("location: ../register.php?error=invalidEmail");
         exit();
     }
-    if (passMatch($pas, $pasRep) == false) {
+    if (passMatch($pas, $pasRep) !== false) {
         header("location: ../register.php?error=passnotmatch");
         exit();
     }

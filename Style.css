@@ -99,6 +99,7 @@ p{
     width: 316px;
     height: 475px;
 }
+
 .container2{
     max-width: 1080px;
     margin: auto;
@@ -115,7 +116,6 @@ p{
     background-color: #8a561213;
     padding: 2%;
 }
-
 
   form.example input[type=text] {
     padding: 10px;

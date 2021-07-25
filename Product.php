@@ -4,7 +4,7 @@
         
              <div class="container2">
 
-                 <form class="example" action="/action_page.php">
+                 <form class="example" action="/product.php">
                       <input type="text"name="search">
                       <button type="submit" style="padding: 2.5px;"><img src="/images/search.png"><i class="fa fa-search"></i></button>
                     </form>

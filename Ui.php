@@ -1,7 +1,7 @@
 <?php
     include_once 'header.php';
 ?>
-    <form class="example" action="/action_page.php" style="width: 1080px; ; margin-left: 435px; padding-right: 30px;">
+    <form class="example" action="product.php" style="width: 1080px; ; margin-left: 435px; padding-right: 30px;">
         <input type="text" name="search" style="padding: 10px;">
         <button type="submit" style="padding: 2.5px;"><img src="/images/search.png"><i class="fa fa-search"></i></button>
       </form> 

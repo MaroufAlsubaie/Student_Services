@@ -13,10 +13,6 @@ body {
   justify-content: center;
   background: radial-gradient(#fff, #f19a273b);
 }
-::selection {
-  color: #fff;
-  background: radial-gradient(#fff, #f19a273b);
-}
 .wrapper {
   width: 380px;
   padding: 40px 30px 50px 30px;
@@ -24,6 +20,11 @@ body {
   border-radius: 5px;
   text-align: center;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+.wrapper .login {
+  color: #56dc35;
+  height: 30px;
+  margin-top: 5px;
 }
 .wrapper header {
   font-size: 35px;
