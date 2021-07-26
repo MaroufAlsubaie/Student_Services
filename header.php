@@ -23,7 +23,7 @@ session_start();
                     <ul>
                         <li><a href="Ui.php">الصفحة الرئيسة</a></li>
                         <li><a href="Product.php">المنتجات</a></li>
-                        <li><a href="">تعرف علينا اكثر</a></li>
+                        <li><a href="Contact.php">تعرف علينا اكثر</a></li>
                         <li><a href="">الدعم الفني</a></li>
                     </ul>
                 </nav>
