@@ -120,6 +120,6 @@ function createAddress($conn, $usersId, $contry, $ctiy, $street, $pin, $phoneNum
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../address.php?error=none");
+    header("location: ../addressList.php");
     exit();
 }
