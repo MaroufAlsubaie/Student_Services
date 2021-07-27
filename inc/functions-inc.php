@@ -1,5 +1,5 @@
 <?php
-
+//-----------------------------------------singup
 function emptyInputSignup($name, $email, $pas, $pasRep) {
     $result;
     if (empty($name) || empty($email) || empty($pas) || empty($pasRep))$result = true;
@@ -69,7 +69,7 @@ function createUser($conn, $name, $email, $pas) {
     header("location: ../login.php?error=none");
     exit();
 }
-
+//----------------------------------------login
 function emptyInputlogin($name, $pass) {
     $result;
     if (empty($name) || empty($pass))$result = true;
@@ -107,7 +107,7 @@ function emptyimpot($contry, $ctiy, $street, $pin, $phoneNum) {
     else $result = false;
     return $result;
 }
-
+//---------------------------------------------address
 function createAddress($conn, $usersId, $contry, $ctiy, $street, $pin, $phoneNum) {
     $sql = "INSERT INTO address (usersId, contry, ctiy, street, pin, phoneNum) VALUES (?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
@@ -122,4 +122,60 @@ function createAddress($conn, $usersId, $contry, $ctiy, $street, $pin, $phoneNum
 
     header("location: ../addressList.php");
     exit();
+}
+
+//-----------------------------------admin login
+function ADMemptyInputlogin($name, $pass) {
+    $result;
+    if (empty($name) || empty($pass))$result = true;
+    else $result = false;
+    return $result;
+}
+
+function ADMloginUser($conn, $name, $pass){
+    $nameExitsts = ADMnameExists($conn, $name);
+
+    if ($nameExitsts == false){
+        header("location: ../admin_login.php?error=wronglogin");
+        exit();
+    }
+
+    $hashedpass = $nameExitsts["adminPass"];
+    $checkpass = password_verify($pass, $hashedpass);
+
+    if ($checkpass == false){
+        header("location: ../admin_login.php?error=wronglogin");
+        exit();
+    }
+    else if ($checkpass == true){
+        session_start();
+        $_SESSION["adminId"] = $nameExitsts["adminId"];
+        $_SESSION["adminName"] = $nameExitsts["adminName"];
+        header("location: ../AdminUi.php");
+        exit();
+    }
+}
+
+function ADMnameExists($conn, $name) {
+    $sql = "SELECT * FROM admins WHERE adminName = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../register.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $name);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+    }
+    else {
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
 }
