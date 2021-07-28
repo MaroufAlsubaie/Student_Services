@@ -22,6 +22,11 @@ include 'header.php';
 
 <?php  //error Handler
 
+if (isset($_GET["error"])){
+    if ($_GET["error"] == "emptyinput"){
+      echo "الرجاء اكمال الفرغات";
+    }
+}
 ?>
 
 </div>
