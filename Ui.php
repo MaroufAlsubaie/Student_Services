@@ -33,7 +33,7 @@
                         <input type="number" name="quantity" class="input1" value="1">
                         <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]?>">
                         <input type="hidden" name="hidden_price" value="<?php echo $row["price"]?>">
-                        <input type="submit" name="add" class="bottun1" value="اضف الى السلة">
+                        <input type="submit" name="add" class="bottun1" value="اضف الى السلة" style="font-size:16px;">
                     </div>
                     </form>
                     </div>
