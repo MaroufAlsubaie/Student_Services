@@ -8,7 +8,7 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <title>STUDENT Service | Project of CTI Student</title> 
-        <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="Style.css?version=2">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
     </head>

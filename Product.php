@@ -4,16 +4,17 @@
         
              <div class="container2">
 
-                 <form class="example" action="/product.php">
-                      <input type="text"name="search">
-                      <button type="submit" style="padding: 2.5px;"><img src="/images/search.png"><i class="fa fa-search"></i></button>
+                 <form class="example" action="/product.php" method="POST">
+                      <input type="text" name="search" placeholder="وش نبي تبحث عنه...؟" style="text-align:right;">
+                      <button  type="submit" name="submit-search" style="padding: 2.5px;"><img src="/images/search.png"></button>
                     </form>
+
                     <br>
                     <br>
                     <br>
                  <div class="goods">
                      <?php
-                     $query ="SELECT * FROM product ORDER BY id ASC ";
+                     $query ="SELECT * FROM product ORDER BY ID ASC ";
                         if (isset($_GET["sort"])){
                             if ($_GET["sort"] == "low")
                             $query ="SELECT * FROM `product` ORDER BY `product`.`price` ASC";
@@ -21,8 +22,8 @@
                             $query ="SELECT * FROM `product` ORDER BY `product`.`price` DESC";
                             elseif ($_GET["sort"] == "abc")
                             $query ="SELECT * FROM `product` ORDER BY `product`.`Name` ASC";
-                            elseif ($_GET["sort"] == "high")
-                            $query ="SELECT * FROM `product` ORDER BY `product`.`Name` DESC";
+                            elseif ($_GET["sort"] == "cba")
+                            $query ="SELECT * FROM `product`  ORDER BY `product`.`Name` DESC";
 
                         }
                             ?>
@@ -68,7 +69,7 @@
                 }
                 ?>
                 
-                <button type="submit" class="bottun11" > فلتر</button>
+                <button type="submit" class="bottu1" > فلتر</button>
                 </form>
                    <div class="row">
                    
@@ -84,18 +85,30 @@
                     
                     if (isset($_GET["sort"])){
                         if ($_GET["sort"] == "low")
-                        $query ="SELECT * FROM `product` where type = '$rowbrand' ORDER BY `product`.`price` ASC";
+                        $query ="SELECT * FROM `product` WHERE type = '$rowbrand' ORDER BY `product`.`price` ASC";
                         elseif ($_GET["sort"] == "high")
-                        $query ="SELECT * FROM `product` where type IN ($rowbrand) ORDER BY `product`.`price` DESC";
+                        $query ="SELECT * FROM `product` WHERE type = '$rowbrand' ORDER BY `product`.`price` DESC";
                         elseif ($_GET["sort"] == "abc")
-                        $query ="SELECT * FROM `product` where type IN ($rowbrand) ORDER BY `product`.`Name` ASC";
-                        elseif ($_GET["sort"] == "high")
-                        $query ="SELECT * FROM `product` where type IN ($rowbrand) ORDER BY `product`.`Name` DESC";
-                        else 
-                        $query ="SELECT * FROM `product` where type = '$rowbrand' ORDER BY `ID` ASC";
-                    }}}
+                        $query ="SELECT * FROM `product` WHERE type = '$rowbrand' ORDER BY `product`.`Name` ASC";
+                        elseif ($_GET["sort"] == "cba")
+                        $query ="SELECT * FROM `product` WHERE type = '$rowbrand' ORDER BY `product`.`Name` DESC";
+                        
+                    }
+                    else 
+                        $query ="SELECT * FROM `product` WHERE type = '$rowbrand' ORDER BY `ID` ASC";
+                }}
+                
+                if (isset($_POST['submit-search']) ){
+                    $search = mysqli_real_escape_string($conn, $_POST['search']);
+                    $query = "SELECT * FROM product WHERE Name LIKE '%$search%' OR photo LIKE '%$search%' OR type LIKE '%$search%'  ";
+                    
+                }
+                
+                
                     $result = mysqli_query($conn,$query);
                     while($row = mysqli_fetch_assoc($result)) {?>
+
+
                     <div class="col-3">
                         <div class="image">
                         <form method="post" action="cart.php?id=<?=$row['ID']?>">
@@ -105,7 +118,7 @@
                         <input type="number" name="quantity" class="input1" value="1">
                         <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]?>">
                         <input type="hidden" name="hidden_price" value="<?php echo $row["price"]?>">
-                        <input type="submit" name="add" class="bottun1" value="اضف الى السلة" style="font-size:16px;">
+                        <input type="submit" name="add" class="bottun1" value="اضف الى السلة" >
                     </div>
                     </form>
                     </div>
