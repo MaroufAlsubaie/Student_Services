@@ -7,15 +7,20 @@
             
 
                     <br>
-                    <p style=" text-align:right;">
 
 
                     <h1 style=" text-align:right;">التواصل</h1>
                     <br>
-</p>
-                <br>
+                    
                 <br>
                 <br>
                 <br>                
                 <br>
-                
+                <br>
+                <br>
+                <div class="col-3">
+                        <div class="image">
+                        <img style="width: 50%;" src ="images/calls.png">
+                        
+
+            
