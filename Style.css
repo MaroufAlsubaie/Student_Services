@@ -83,6 +83,15 @@ p{
     border-radius: 20px;
     transition:  .7s ;
 }
+.bottu1 {
+    background: rgb(185, 108, 20);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    margin: 30px 0;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition:  .7s ;
+}
 .bottun:hover{
     background: rgb(119, 65, 3);
 }
