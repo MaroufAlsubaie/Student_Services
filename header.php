@@ -24,7 +24,7 @@ session_start();
                         <li><a href="Ui.php">الصفحة الرئيسة</a></li>
                         <li><a href="Product.php">المنتجات</a></li>
                         <li><a href="Contact.php">تعرف علينا اكثر</a></li>
-                        <li><a href="">الدعم الفني</a></li>
+                        <li><a href="suport.php">الدعم الفني</a></li>
                     </ul>
                 </nav>
                 <?php
