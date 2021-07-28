@@ -19,6 +19,7 @@ include 'header.php';
 <p style="font-size:23px; text-align:right; margin-top: 25px;">رقم التواصل</p>
 <input type="text" name="phoneNum"  style="width: 400px;  height: 40px; margin-top: 10px; font-size:22px;  text-align:right; margin-left: 680px;">
 <input type="submit" name="add" class="bottun1" value="تاكيد" style="font-size:16px;">
+</form>
 
 <?php  //error Handler
 
