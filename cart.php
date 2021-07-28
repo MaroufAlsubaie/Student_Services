@@ -74,6 +74,7 @@
                 $total = $total + ($value["quantity"] * $value["price"]);
 
             }
+            $_SESSION["total"] = $total;
                 ?>
 
                 <tr>
@@ -97,6 +98,7 @@
         
     </table>
     </div>
+
     </div>
         </div>
         <br><br><br><br><br><br>

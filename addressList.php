@@ -33,9 +33,11 @@
         echo "<h4>${row['pin']}</h4>";
         echo "<h4>${row['phoneNum']}</h4>";
 
-        echo "<p><a href='#' class='bottun'>اختيار العنوان</a></p>";
+        ?>
+        <p><a href='inc/order-inc.php?addressId=<?php echo $row['addressId']; ?>' class='bottun'>اختيار العنوان</a></p>
 
-        echo "</div>";
+        </div>
+        <?php
         $i ++;
     }
     if ($i==0) { 
