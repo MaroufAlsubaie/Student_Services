@@ -11,7 +11,7 @@ if (isset($_POST["sup"])){
     require 'dbh-inc.php';
     require 'functions-inc.php';
 
-    if (emptyimpot($contry, $ctiy, $street, $pin, $phoneNum) !== false) {
+    if (addressEmptyImpot($contry, $ctiy, $street, $pin, $phoneNum) !== false) {
         header("location: ../address.php?error=emptyinput");
         exit();
     }

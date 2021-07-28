@@ -101,13 +101,15 @@ function loginUser($conn, $name, $pass){
     }
 }
 
-function emptyimpot($contry, $ctiy, $street, $pin, $phoneNum) {
+//---------------------------------------------address
+
+function addressEmptyImpot($contry, $ctiy, $street, $pin, $phoneNum) {
     $result;
     if (empty($contry) || empty($ctiy)|| empty($street)|| empty($pin)|| empty($phoneNum))$result = true;
     else $result = false;
     return $result;
 }
-//---------------------------------------------address
+
 function createAddress($conn, $usersId, $contry, $ctiy, $street, $pin, $phoneNum) {
     $sql = "INSERT INTO address (usersId, contry, ctiy, street, pin, phoneNum) VALUES (?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
