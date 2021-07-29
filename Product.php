@@ -106,8 +106,10 @@
                 
                 
                     $result = mysqli_query($conn,$query);
-                    while($row = mysqli_fetch_assoc($result)) {?>
-
+                    while($row = mysqli_fetch_assoc($result)) {
+                        if($row["quantity"] > 0){
+                        ?>
+                    
 
                     <div class="col-3">
                         <div class="image">
@@ -122,7 +124,7 @@
                     </div>
                     </form>
                     </div>
-                    <?php } 
+                    <?php }} 
 
                     ?> 
                 </div>

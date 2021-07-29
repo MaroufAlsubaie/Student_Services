@@ -34,7 +34,7 @@
         echo "<h4>${row['phoneNum']}</h4>";
 
         ?>
-        <p><a href='inc/order-inc.php?addressId=<?php echo $row['addressId']; ?>' class='bottun'>اختيار العنوان</a></p>
+        <p><a href='inc/order-inc.php?addressId=<?php echo $row['addressiD']; ?>' class='bottun'>اختيار العنوان</a></p>
 
         </div>
         <?php
@@ -46,4 +46,4 @@
     }
     mysqli_stmt_close($stmt);
 ?>
-<p><a href="address.php" class="bottun">اضافة عنوان</a></p>
+<p style="margin-top:120px;"><a href="address.php" class="bottun">اضافة عنوان</a></p>

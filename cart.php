@@ -4,6 +4,7 @@
     if (isset($_POST["add"])){
         if (isset($_SESSION["cart"])){
             $item_array_id = array_column($_SESSION["cart"],"ID");
+            $getid = $_GET["id"];
             if (!in_array($_GET["id"],$item_array_id)){
                 $count = count($_SESSION["cart"]);
                 $item_array = array(
@@ -15,7 +16,7 @@
                 $_SESSION["cart"][$count] = $item_array;
                 echo '<script>window.location="cart.php"</script>';
             }else{
-                echo '<script>alert("Product is already Added to Cart")</script>';
+                //echo '<script>alert("Product is already Added to Cart")</script>';
                 echo '<script>window.location="cart.php"</script>';
             }
         }else{
@@ -40,6 +41,13 @@
             }
         }
     }
+    $item_array_id = array_column($_SESSION["cart"],"ID");
+    if (in_array($getid,$item_array_id)){
+        foreach ($_SESSION["cart"] as $key1 => $value1) {?>
+            <br><?php
+            echo $value1["quantity"];
+        }
+    }
 ?>
 <br>
 <br><br><br><br><br><br>
@@ -58,6 +66,9 @@
 
     <?php
 
+            
+                
+    
         if(!empty($_SESSION["cart"])){
             $total = 0;
             foreach ($_SESSION["cart"] as $key => $value) {
@@ -73,7 +84,7 @@
                 </tr>
                 <?php
                 $total = $total + ($value["quantity"] * $value["price"]);
-
+               
             }
             $_SESSION["total"] = $total;
                 ?>
@@ -95,7 +106,7 @@
                 </tr>
                 <?php
             }
-
+           
         ?>
         
     </table>

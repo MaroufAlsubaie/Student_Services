@@ -23,6 +23,9 @@ if (isset($_GET["addressId"])){
 
 
 
+    
+
+    
     $sql = "INSERT INTO items_order (`orderID`,`productiD`,`quantity`,`price`) VALUES (? ,? ,? ,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -33,7 +36,17 @@ if (isset($_GET["addressId"])){
     foreach ($_SESSION["cart"] as $key => $value) {
         $total = ($value["quantity"] * $value["price"]);
         mysqli_stmt_bind_param($stmt, "iiii", $orderID, $value["ID"], $value["quantity"], $total);
-        mysqli_stmt_execute($stmt);
+        mysqli_stmt_execute($stmt);           
+        $iD = $value["ID"];
+        $sql1 = "SELECT * FROM `product` WHERE ID =$iD";
+        $update = mysqli_query($conn,$sql1);
+        $row = mysqli_fetch_assoc($update);
+        $qu =  $row["quantity"] - $value["quantity"];
+        $sql_update ="UPDATE `product` SET `quantity` = $qu WHERE `product`.`ID` = $iD;";
+        $stmt1 = $conn->prepare($sql_update);
+
+        // execute the query
+        $stmt1->execute();
         }
         mysqli_stmt_close($stmt);
 
