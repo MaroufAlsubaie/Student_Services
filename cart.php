@@ -57,13 +57,14 @@
     </tr>
 
     <?php
+
         if(!empty($_SESSION["cart"])){
             $total = 0;
             foreach ($_SESSION["cart"] as $key => $value) {
                 ?>
                 <tr>
                     <td class="td"><?php echo $value["Name"]; ?></td>
-                    <td class="td"><input type="number" name="quantity1" class="input1" value=<?php echo $value["quantity"]; ?>></td>
+                    <td class="td"><?php echo $value["quantity"]; ?></td>
                     <td class="td"><?php echo $value["price"]; ?></td>
                     <td class="td"><?php echo number_format($value["quantity"] * $value["price"], 2); ?></td>
                     <td class="td"><a href="cart.php?action=delete&id=<?php echo $value["ID"]; ?>"><span class="text-danger">Remove Item</span></a></td>
@@ -94,6 +95,7 @@
                 </tr>
                 <?php
             }
+
         ?>
         
     </table>
