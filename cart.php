@@ -16,7 +16,7 @@
                 $_SESSION["cart"][$count] = $item_array;
                 echo '<script>window.location="cart.php"</script>';
             }else{
-                //echo '<script>alert("Product is already Added to Cart")</script>';
+                echo '<script>alert("Product is already Added to Cart")</script>';
                 echo '<script>window.location="cart.php"</script>';
             }
         }else{
@@ -41,13 +41,7 @@
             }
         }
     }
-    $item_array_id = array_column($_SESSION["cart"],"ID");
-    if (in_array($getid,$item_array_id)){
-        foreach ($_SESSION["cart"] as $key1 => $value1) {?>
-            <br><?php
-            echo $value1["quantity"];
-        }
-    }
+
 ?>
 <br>
 <br><br><br><br><br><br>
@@ -57,7 +51,7 @@
 
 <table class="table">
     <tr>
-        <th widih="60%" class="th">Product Name</th>
+        <th  class="th">Product Name</th>
         <th  style="padding-left: 5px; padding-right: 5px;" class="th">Quantity</th>
         <th style="padding-left: 10px; padding-right: 10px;" class="th">Price Details</th>
         <th style="padding-left: 30px; padding-right: 30px;" class="th">Total Price</th>
@@ -66,9 +60,6 @@
 
     <?php
 
-            
-                
-    
         if(!empty($_SESSION["cart"])){
             $total = 0;
             foreach ($_SESSION["cart"] as $key => $value) {
@@ -79,7 +70,6 @@
                     <td class="td"><?php echo $value["price"]; ?></td>
                     <td class="td"><?php echo number_format($value["quantity"] * $value["price"], 2); ?></td>
                     <td class="td"><a href="cart.php?action=delete&id=<?php echo $value["ID"]; ?>"><span class="text-danger">Remove Item</span></a></td>
-                                
 
                 </tr>
                 <?php

@@ -124,7 +124,18 @@ p{
     background-color: #8a561213;
     padding: 2%;
 }
-
+.bank{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+.bank img{
+    width: 800px;
+    height: 200px;
+    
+}
   form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
