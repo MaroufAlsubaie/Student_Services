@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_POST["sup"])){
+if (isset($_POST["confirm"])){
     $contry = $_POST["contry"];
     $ctiy = $_POST["ctiy"];
     $street = $_POST["street"];

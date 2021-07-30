@@ -49,7 +49,7 @@ if (isset($_GET["addressId"])){
         $stmt1->execute();
         }
         mysqli_stmt_close($stmt);
-
+        $_SESSION["cart"] = null;
         header("location: ../pay.php");
         exit();
 }}

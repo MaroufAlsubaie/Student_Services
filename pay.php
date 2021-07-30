@@ -18,7 +18,7 @@ include 'header.php';
 
         <?php
         $useriD = $_SESSION["usersId"];
-        $sql = "SELECT * FROM orders WHERE usersId= 1 ORDER BY 'orderID' ASC;";
+        $sql = "SELECT * FROM orders WHERE usersId= $useriD ORDER BY 'orderID' ASC;";
         $result = mysqli_query($conn,$sql); 
         
         while($row = mysqli_fetch_assoc($result)) { ?>

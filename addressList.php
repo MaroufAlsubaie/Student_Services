@@ -1,5 +1,8 @@
 <?php
     include_once 'header.php';
+    if (isset($_POST["confirm"])){
+        echo '<script>window.location="addressList.php"</script>';
+    }
     ?>
     
 <div class="container2">

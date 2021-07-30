@@ -30,7 +30,17 @@ session_start();
                 <?php
                 if (isset($_SESSION["usersId"])){
                     echo $_SESSION["usersName"];
-                    echo "<a href='inc/logout.php'><img src='images/account.png' width= 35px></a>";
+                    ?> 
+                    <div class="dropdown"  >
+                    <img src='images/account.png'  width= 35px>
+                    <div class="dropdown-content" style="right:-30px;">
+                        <p style="text-align:right;">
+                        <a href="accinfo.php">عرض المعلومات</a>
+                        <a href="pay.php">عرض الطلبات</a>
+                        <a href="inc/logout.php">تسجيل الخروج</a>
+                    </p>
+                    </div>
+                    </div> <?php
                 }
                 else{
                     echo "<a href='login.php'><img src='images/account.png' width= 35px></a>";
@@ -39,3 +49,5 @@ session_start();
                     <a href="cart.php"><img src="images/cart.png" width= 35px></a>
             </div>
         </div>
+
+        
