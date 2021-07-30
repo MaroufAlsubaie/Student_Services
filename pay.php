@@ -17,11 +17,18 @@ include 'header.php';
         </tr>
 
         <?php
-        $useriD = $_SESSION["usersId"];
-        $sql = "SELECT * FROM orders WHERE usersId= 1 ORDER BY 'orderID' ASC;";
-        $result = mysqli_query($conn,$sql); 
-        
-        while($row = mysqli_fetch_assoc($result)) { ?>
+        $usersId = $_SESSION["usersId"];
+        $sql = "SELECT * FROM orders WHERE usersId= ? ORDER BY 'orderID' ASC;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            echo "error";
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt, "i", $usersId);
+        mysqli_stmt_execute($stmt);
+        $resultData = mysqli_stmt_get_result($stmt);
+
+        while($row = mysqli_fetch_assoc($resultData)) { ?>
 
         <tr>
             <td class="td"><?php echo $row["orderID"]; ?></td>
