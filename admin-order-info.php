@@ -1,4 +1,5 @@
 <?php
+
 include 'header.php';
 
 if (isset($_GET["orderID"])){
@@ -13,7 +14,7 @@ else {
 <div class="container2">
 <div class="goods">
 <div class="row">
-<h1>معلومات الطلاب</h1>
+<h1>معلومات الطلب</h1>
 <table style="width: 80%">
     <tr>
         <th  class="th"> usersName </th>

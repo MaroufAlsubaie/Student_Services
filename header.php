@@ -8,7 +8,7 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <title>STUDENT Service | Project of CTI Student</title> 
-        <link rel="stylesheet" href="Style.css?version=6">
+        <link rel="stylesheet" href="Style.css?version=7">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
@@ -37,6 +37,7 @@ session_start();
                         <p style="text-align:right;">
                         <a href="accinfo.php">عرض المعلومات</a>
                         <a href="pay.php">عرض الطلبات</a>
+                        <a href="addressinfo.php">عرض عناوين التوصيل</a>
                         <a href="inc/logout.php">تسجيل الخروج</a>
                     </p>
                     </div>
