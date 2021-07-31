@@ -75,7 +75,7 @@ if (isset($_POST["new-pass"])){
     if ($old1 == $old){
         if ($new == $new2){
     if($new !== "" && $new2 !== "")  {
-        $info_update ="UPDATE `users` SET `usersPass` = '$new' WHERE `users`.`usersId` = $useriD;";
+        //$info_update ="UPDATE `users` SET `usersPass` = '$new' WHERE `users`.`usersId` = $useriD;";
     }
         $result123 = mysqli_query($conn,$info_update);
         echo '<script>window.location="accinfo.php"</script>';

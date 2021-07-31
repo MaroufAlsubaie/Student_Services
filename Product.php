@@ -109,8 +109,6 @@
                     while($row = mysqli_fetch_assoc($result)) {
                         if($row["quantity"] > 0){
                         ?>
-                    
-
                     <div class="col-3">
                         <div class="image">
                         <form method="post" action="cart.php?id=<?=$row['ID']?>">
@@ -124,9 +122,25 @@
                     </div>
                     </form>
                     </div>
-                    <?php }} 
-
-                    ?> 
+                    <?php }
+                    else {
+                        ?>
+                    <div class="col-3">
+                        <div class="image">
+                        <img src="images/<?=$row['photo']?>">
+                        <h4><?=$row['Name'];?></h4>
+                        <p><?=$row['price'];?> ريال</p>
+                        <input type="number" name="quantity" class="input1" value="<?php echo $row["quantity"]?>" min="0" max=<?php echo $row["quantity"]?>>
+                        <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]?>">
+                        <input type="hidden" name="hidden_price" value="<?php echo $row["price"]?>">
+                        <button class="bottun1" style="font-size:15px; background:rgb(107, 57, 0);" >نفذت الكمية</button>
+                    </div> 
+                    </div>
+                    <?php
+                    }    
+                } 
+            ?>
+                     
                 </div>
              </div>
             

@@ -30,7 +30,7 @@
 
             <div class="field password">
               <div class="input-area">
-                <input type="text" name="pas" placeholder="الرقم السري" />
+                <input type="password" name="pas" placeholder="الرقم السري" />
                 <i class="icon fas fa-lock"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
@@ -38,7 +38,7 @@
 
               <div class="field password">
                 <div class="input-area">
-                  <input type="text" name="pasRep" placeholder="اعادة الرقم السري" />
+                  <input type="password" name="pasRep" placeholder="اعادة الرقم السري" />
                   <i class="icon fas fa-lock"></i>
                   <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
