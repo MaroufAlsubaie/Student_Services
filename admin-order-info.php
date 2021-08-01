@@ -2,15 +2,7 @@
 
 include 'header.php';
 
-if (isset($_GET["orderID"])){
-
-}
-else {
-    header("url=AdminUi.php");
-    exit();
-}
-?>
-
+if (isset($_GET["orderID"])){ ?>
 <div class="container2">
 <div class="goods">
 <div class="row">
@@ -86,3 +78,11 @@ $orderID = $_GET["orderID"];
         </tr>
             </tr>
             <?php }mysqli_stmt_close($stmt); ?>
+            <?php
+}
+else {
+    header("location: adminUi.php");
+    exit();
+}
+?>
+

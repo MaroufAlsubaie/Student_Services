@@ -1,6 +1,7 @@
 <?php
 include_once 'header.php';
 
+if (isset($_SESSION["adminId"])){
 ?>
 <div class="container2">
 <div class="goods">
@@ -40,3 +41,9 @@ include_once 'header.php';
         </tr>
         <?php } ?>
     </table>
+    <?php }
+    else {
+        header("location: admin_login.php");
+        exit();
+    }
+    ?>

@@ -183,7 +183,7 @@ function ADMnameExists($conn, $name) {
 }
 //--------------------------------------------order
 function createOrder($conn, $usersId, $addressId, $total) {
-    $sql = "INSERT INTO orders (`usersId`,`addressId`,`total`,`status`) VALUES (?, ?, ?, 'NotPaid');";
+    $sql = "INSERT INTO orders (`usersId`,`addressId`,`total`,`status`) VALUES (?, ?, ?, 'غير مدفوع');";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../cart.php?error=stmtfailed");

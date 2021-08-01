@@ -4,7 +4,7 @@
         
              <div class="container2">
 
-                 <form class="example" action="/product.php" method="POST">
+                 <form class="example" action="product.php" method="POST">
                       <input type="text" name="search" placeholder="وش نبي تبحث عنه...؟" style="text-align:right;">
                       <button  type="submit" name="submit-search" style="padding: 2.5px;"><img src="/images/search.png"></button>
                     </form>
