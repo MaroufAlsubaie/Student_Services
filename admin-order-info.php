@@ -52,7 +52,7 @@ $orderID = $_GET["orderID"];
         <tr>
             <th  class="th"> Name </th>
             <th style="padding-left: 5px;" class="th">productiD</th>
-            <th style="padding-left: 40px; padding-right: 40px;" class="th">quantity</th>
+            <th style="padding-left: 40px; padding-right: 40px;" class="th">Quantity</th>
             <th style="padding-left: 40px; padding-right: 40px;" class="th">price</th>
         </tr>
 <?php
@@ -73,7 +73,7 @@ $orderID = $_GET["orderID"];
         <tr>
             <th  class="td"><?php echo $row["Name"]; ?> </th>
             <th style="padding-left: 5px;" class="td"><?php echo $row["productiD"]; ?></th>
-            <th style="padding-left: 40px; padding-right: 40px;" class="td"><?php echo $row["quantity"]; ?></th>
+            <th style="padding-left: 40px; padding-right: 40px;" class="td"><?php echo $row["Quantity"]; ?></th>
             <th style="padding-left: 40px; padding-right: 40px;" class="td"><?php echo $row["price"]; ?></th>
         </tr>
             </tr>

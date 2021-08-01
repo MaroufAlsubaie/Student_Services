@@ -26,7 +26,7 @@ if (isset($_GET["addressId"])){
     
 
     
-    $sql = "INSERT INTO items_order (`orderID`,`productiD`,`quantity`,`price`) VALUES (? ,? ,? ,?);";
+    $sql = "INSERT INTO items_order (`orderID`,`productiD`,`Quantity`,`price`) VALUES (? ,? ,? ,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../cart.php?error=stmtfailed");
