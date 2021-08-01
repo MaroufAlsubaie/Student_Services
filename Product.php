@@ -82,9 +82,10 @@
                         {
                             
                             
-                    
+                    $so = [];
                     if (isset($_GET["sort"])){
-                        if ($_GET["sort"] == "low")
+                        $so = $_GET["sort"];
+                        if ($so == "low")
                         $query ="SELECT * FROM `product` WHERE type = '$rowbrand' ORDER BY `product`.`price` ASC";
                         elseif ($_GET["sort"] == "high")
                         $query ="SELECT * FROM `product` WHERE type = '$rowbrand' ORDER BY `product`.`price` DESC";

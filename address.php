@@ -23,6 +23,12 @@ include 'header.php';
 
 </form>
 
+
+
+</div>
+
+</div>
+
 <?php  //error Handler
 
 if (isset($_GET["error"])){
@@ -31,8 +37,3 @@ if (isset($_GET["error"])){
     }
 }
 ?>
-
-</div>
-
-</div>
-
