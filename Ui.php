@@ -1,9 +1,9 @@
 <?php
     include_once 'header.php';
 ?>
-    <form class="example" action="product.php" style="width: 1080px; ; margin-left: 435px; padding-right: 30px;">
-        <input type="text" name="search" style="padding: 10px;">
-        <button type="submit" style="padding: 2.5px;"><img src="/images/search.png"><i class="fa fa-search"></i></button>
+    <form class="example" action="product.php" style="width: 1080px; ; margin-left: 435px; padding-right: 30px;" method="get">
+        <input type="text" name="search" style="padding: 10px; text-align:right;" placeholder="وش نبي تبحث عنه...؟">
+        <button type="submit" name="submit-search" style="padding: 2.5px;"><img src="/images/search.png"><i class="fa fa-search"></i></button>
       </form> 
     <div class="row">
         <div class="col-2">
