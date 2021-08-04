@@ -39,8 +39,8 @@ if (isset($_SESSION["adminId"])){
         $UID = $_POST["usID"];
         $name = $_POST["nameU"];
         $email= $_POST["Email"];
-        $pass= $_POST["Pass"];
-        $sqlup = "UPDATE `users` SET `usersName` = '$name' , `usersEmail`= '$email' , `usersPass`= '$pass'  WHERE `users`.`usersId` = $UID;";
+        $hashedpass = password_hash($_POST["Pass"], PASSWORD_DEFAULT);
+        $sqlup = "UPDATE `users` SET `usersName` = '$name' , `usersEmail`= '$email' , `usersPass`= '$hashedpass'  WHERE `users`.`usersId` = $UID;";
         $de = mysqli_query($conn,$sqlup);
     }
     if (isset($_POST["edit"])){

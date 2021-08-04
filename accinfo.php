@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-
+require 'inc/functions-inc.php';
 ?>
 
 <div class="container2">
@@ -67,20 +67,40 @@ if (isset($_POST["email"])){
         echo '<script>window.location="accinfo.php"</script>';
 }
 }
+
 if (isset($_POST["new-pass"])){
-    $old = 12345;
-    $old1 = $_POST["old-pass"];
-    $new = $_POST["new-pass"];
-    $new2 =   $_POST["new-pass-2"];
-    if ($old1 == $old){
-        if ($new == $new2){
-    if($new !== "" && $new2 !== "")  {
-        //$info_update ="UPDATE `users` SET `usersPass` = '$new' WHERE `users`.`usersId` = $useriD;";
+    if (passMatch($_POST["new-pass"], $_POST["new-pass-2"]) !== false) {
+        echo("passnotmatch");
+        exit();
     }
-        $result123 = mysqli_query($conn,$info_update);
-        echo '<script>window.location="accinfo.php"</script>';
+    $nameExitsts = nameExists($conn, $_SESSION["usersName"]);
+    if ($nameExitsts == false){
+        echo("wrongPass");
+        exit();
+    }
+
+    $hashedpass = $nameExitsts["usersPass"];
+    $checkpass = password_verify($_POST["new-pass"], $hashedpass);
+
+    if ($checkpass == false){
+        echo("wrongPassH");
+        exit();
+    }
+
+    else if ($checkpass == true){
+        $sql ="UPDATE `users` SET `usersPass` = ? WHERE `users`.`usersId` = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            echo("stmtfailed");
+            exit();
         }
-}
+        $hashedpass = password_hash($_POST["new-pass"], PASSWORD_DEFAULT);
+
+        mysqli_stmt_bind_param($stmt, "si", $hashedpass, $_SESSION["usersId"]);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+
+    }
 }
 }
 ?>
