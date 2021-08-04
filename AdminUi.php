@@ -7,6 +7,18 @@ if (isset($_SESSION["adminId"])){
         $sqld = "DELETE FROM `product` WHERE `product`.`ID` = $delt;";
         $de = mysqli_query($conn,$sqld);
     }
+    if (isset($_GET["DIDU"])){
+        $delt = $_GET["DIDU"];
+        $sqld = "DELETE FROM `users` WHERE `users`.`usersId` = $delt;";
+        $de = mysqli_query($conn,$sqld);
+    }
+    if (isset($_POST["AddU"])){
+        $name = $_POST["name"];
+        $email= $_POST["email"];
+        $pass= $_POST["pass"];
+        $sqladd = "INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersPass`) VALUES (NULL, '$name', '$email', '$pass');";
+        $de = mysqli_query($conn,$sqladd);
+    }
     if (isset($_POST["Add"])){
         $name = $_POST["name"];
         $price= $_POST["price"];
@@ -20,6 +32,14 @@ if (isset($_SESSION["adminId"])){
         $delt = $_GET["DEID"];
         $sqld = "DELETE FROM `orders` WHERE `orders`.`orderID` = $delt;";
         $de = mysqli_query($conn,$sqld);
+    }
+    if (isset($_POST["editU"])){
+        $UID = $_POST["usID"];
+        $name = $_POST["nameU"];
+        $email= $_POST["Email"];
+        $pass= $_POST["Pass"];
+        $sqlup = "UPDATE `users` SET `usersName` = '$name' , `usersEmail`= '$email' , `usersPass`= '$pass'  WHERE `users`.`usersId` = $UID;";
+        $de = mysqli_query($conn,$sqlup);
     }
     if (isset($_POST["edit"])){
         $PID = $_POST["ID"];
@@ -94,7 +114,7 @@ if (isset($_SESSION["adminId"])){
     </table>
 
 
-    <div class="container2">
+<div class="container2">
 <div class="goods">
 <div class="row">
     <h1>المنتجات</h1> 
@@ -173,6 +193,80 @@ if (isset($_SESSION["adminId"])){
             <th style="padding-left: 5px; padding-right: 5px;" class="td"><input name="pho" type="text"></th>
             <th class="td">
             <button  type="submit" name="Add" class="bottun11" style="text-align:left;">اضف المنتج</button>
+            </th>
+        </form>
+        </tr>
+    </table>
+
+
+    
+<div class="container2">
+<div class="goods">
+<div class="row">
+    <h1>الحسابات</h1> 
+<table style="width: 100%">
+        <tr>
+            <th  class="th"> ID </th>
+            <th style="padding-left: 5px;" class="th">Name</th>
+            <th style="padding-left: 25px; padding-right: 25px;" class="th">Email</th>
+            <th style="padding-left: 25px; padding-right: 25px;" class="th">Password</th>
+            <th style="padding-left: 40px; padding-right: 40px;" class="th">edit</th>
+            <th style="padding-left: 25px; padding-right: 25px;" class="th">delete</th>
+        </tr>
+
+        <?php
+        $sqlq = "SELECT * FROM `users`;";
+        $stmts = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmts, $sqlq)) {
+            echo "stmt eroor";
+            exit();
+        }
+        mysqli_stmt_execute($stmts);
+        $resultDatad = mysqli_stmt_get_result($stmts);
+
+        while($row = mysqli_fetch_assoc($resultDatad)) { 
+            if (isset($_GET["IDEU"])){ 
+                $IDE =$_GET["IDEU"];
+                if ($IDE == $row["usersId"]){
+                ?>
+                <tr>
+                    <form action="AdminUi.php" method="POST">
+            <th  class="td"  style="padding-left: 5px; padding-right: 5px;"><?php echo $row["usersId"]; ?><input name="usID" type="hidden" value="<?php echo $row["usersId"];?>"></th>
+            <th  style="padding-left: 5px; padding-right: 5px;" class="td"><input name="nameU" type="text" value="<?php echo $row["usersName"]; ?>"></th>
+            <th  style="padding-left: 5px; padding-right: 5px;" class="td"> <input name="Email" type="text" value="<?php echo $row["usersEmail"]; ?>"></th>
+            <th style="padding-left: 10px; padding-right: 10px;" class="td"><input name="Pass" type="text" value="<?php echo $row["usersPass"]; ?>"></th>
+            <th class="td">
+            <button  type="submit" name="editU" class="bottun11" style="text-align:left;">تاكيد التعديل</button>
+            </th>
+            <th class="td">
+                <p><a href='AdminUi.php?DIDU=<?php echo $row["usersId"]; ?> '>حذف الحساب</a></p>
+            </th>
+        </tr></form>
+            <?php } }
+            ?>
+        
+        <tr>
+            <th  class="td"  style="padding-left: 5px; padding-right: 5px;"><?php echo $row["usersId"];?></th>
+            <th  style="padding-left: 5px; padding-right: 5px;" class="td"><?php echo $row["usersName"] ?></th>
+            <th  style="padding-left: 5px; padding-right: 5px;" class="td"><?php echo $row["usersEmail"]; ?></th>
+            <th style="padding-left: 10px; padding-right: 10px;" class="td"><?php echo $row["usersPass"]; ?></th>
+            <th class="td">
+                <p><a href='AdminUi.php?IDEU=<?php echo $row["usersId"]; ?> '>تعديل الحساب</a></p>
+            </th>
+            <th class="td">
+                <p><a href='AdminUi.php?DIDU=<?php echo $row["usersId"]; ?> '>حذف الحساب</a></p>
+            </th>
+        </tr>
+        
+        <?php } ?>
+        <tr>
+            <form action="AdminUi.php" method="POST">
+            <th  class="td"></th>
+            <th  style="padding-left: 5px; padding-right: 5px;" class="td"><input name="name" type="text"></th>
+            <th  style="padding-left: 5px; padding-right: 5px;" class="td"><input name="email" type="text"></th>
+            <th style="padding-left: 10px; padding-right: 10px;" class="td"><input name="pass" type="text"></th>
+            <th class="td">
+            <button  type="submit" name="AddU" class="bottun11" style="text-align:left;">اضف الحساب</button>
             </th>
         </form>
         </tr>
