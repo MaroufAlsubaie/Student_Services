@@ -15,8 +15,10 @@ if (isset($_SESSION["adminId"])){
     if (isset($_POST["AddU"])){
         $name = $_POST["name"];
         $email= $_POST["email"];
-        $pass= $_POST["pass"];
-        $sqladd = "INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersPass`) VALUES (NULL, '$name', '$email', '$pass');";
+
+        $hashedpass = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+
+        $sqladd = "INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersPass`) VALUES (NULL, '$name', '$email', '$hashedpass');";
         $de = mysqli_query($conn,$sqladd);
     }
     if (isset($_POST["Add"])){
@@ -25,7 +27,7 @@ if (isset($_SESSION["adminId"])){
         $quan= $_POST["quan"];
         $type= $_POST["typ"];
         $pho= $_POST["pho"];
-        $sqladd = "INSERT INTO `product` (`ID`, `Name`, `price`, `photo`, `quantity`, `type`, `Date-add`) VALUES (NULL, '$name', '$price', '$pho', '$quan', '$type', CURRENT_TIMESTAMP);";
+        $sqladd = "INSERT INTO `product` (`Name`, `price`, `photo`, `quantity`, `type`) VALUES ('$name', '$price', '$pho', '$quan', '$type');";
         $de = mysqli_query($conn,$sqladd);
     }
     if (isset($_GET["DEID"])){
