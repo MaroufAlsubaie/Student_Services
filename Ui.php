@@ -19,11 +19,14 @@
              <div class="goods">
                <div class="row">
                <?php 
-                    $query ="SELECT * FROM product ORDER BY id ASC ";
+                    $query ="SELECT * FROM `product` ORDER BY `product`.`Date-add` ASC";
                     $result = mysqli_query($conn,$query);
 
-
-                    while($row = mysqli_fetch_assoc($result)) {?>
+                    $i = 1;
+                    while($row = mysqli_fetch_assoc($result)) {
+                        if($i > 9)
+                        break
+                        ?>
                     <div class="col-3">
                         <div class="image">
                         <form method="post" action="cart.php?id=<?=$row['ID']?>">
@@ -37,7 +40,8 @@
                     </div>
                     </form>
                     </div>
-                    <?php } 
+                    <?php $i++;
+                    } 
 
                     ?>                  
          </div>
