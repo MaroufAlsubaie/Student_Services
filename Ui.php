@@ -19,9 +19,8 @@
              <div class="goods">
                <div class="row">
                <?php 
-                    $query ="SELECT * FROM `product` ORDER BY `product`.`Date-add` ASC";
+                    $query ="SELECT * FROM `product` ORDER BY `product`.`Date-add` DESC";
                     $result = mysqli_query($conn,$query);
-
                     $i = 1;
                     while($row = mysqli_fetch_assoc($result)) {
                         if($i > 9)
