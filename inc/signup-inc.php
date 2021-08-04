@@ -9,6 +9,7 @@ if (isset($_POST["sup"])){
     require 'dbh-inc.php';
     require 'functions-inc.php';
 
+    //التاكد من المدخلات
     if (emptyInputSignup($name, $email, $pas, $pasRep) !== false) {
         header("location: ../register.php?error=emptyinput");
         exit();
@@ -29,7 +30,7 @@ if (isset($_POST["sup"])){
         header("location: ../register.php?error=nametaken");
         exit();
     }
-    createUser($conn, $name, $email, $pas);
+    createUser($conn, $name, $email, $pas);//ادخال المستخدم
 }
 else {
     header("location: ../register.php");

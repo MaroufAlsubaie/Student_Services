@@ -11,12 +11,12 @@ if (isset($_POST["confirm"])){
     require 'dbh-inc.php';
     require 'functions-inc.php';
 
-    if (addressEmptyImpot($contry, $ctiy, $street, $pin, $phoneNum) !== false) {
+    if (addressEmptyImpot($contry, $ctiy, $street, $pin, $phoneNum) !== false) { //التاكد من المدخلات
         header("location: ../address.php?error=emptyinput");
         exit();
     }
 
-    createAddress($conn, $usersId, $contry, $ctiy, $street, $pin, $phoneNum);
+    createAddress($conn, $usersId, $contry, $ctiy, $street, $pin, $phoneNum);//ادخال العنوان
 }
 else {
     header("location: ../address.php");

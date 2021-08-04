@@ -1,7 +1,7 @@
 <?php
 
 session_start ();
-session_unset ();
+session_unset ();//حذف المتغيرات
 session_decode ();
 
 header("location: ../ui.php");
