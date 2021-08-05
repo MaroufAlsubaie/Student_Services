@@ -21,6 +21,8 @@ if (isset($_SESSION["adminId"])){
 
         $sqladd = "INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersPass`) VALUES (NULL, '$name', '$email', '$hashedpass');";
         $de = mysqli_query($conn,$sqladd);
+        echo '<script>window.location="AdminUi.php"</script>';
+
     }
     if (isset($_POST["Add"])){
         $name = $_POST["name"];
@@ -30,6 +32,8 @@ if (isset($_SESSION["adminId"])){
         $pho= $_POST["pho"];
         $sqladd = "INSERT INTO `product` (`Name`, `price`, `photo`, `quantity`, `type`) VALUES ('$name', '$price', '$pho', '$quan', '$type');";
         $de = mysqli_query($conn,$sqladd);
+        echo '<script>window.location="AdminUi.php"</script>';
+
     }
     if (isset($_GET["DEID"])){
         $delt = $_GET["DEID"];

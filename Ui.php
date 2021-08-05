@@ -27,20 +27,39 @@
                         if($i > 9)
                         break
                         ?>
-                    <div class="col-3">
-                        <div class="image">
-                        <form method="post" action="cart.php?id=<?=$row['ID']?>">
-                        <img src="images/<?=$row['photo']?>">
-                        <h4><?=$row['Name'];?></h4>
-                        <p><?=$row['price'];?> ريال</p>
-                        <input type="number" name="quantity" class="input1" value="1">
-                        <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]?>">
-                        <input type="hidden" name="hidden_price" value="<?php echo $row["price"]?>">
-                        <input type="submit" name="add" class="bottun1" value="اضف الى السلة" style="font-size:16px;">
-                    </div>
-                    </form>
-                    </div>
-                    <?php $i++;
+                        <?php
+if($row["quantity"] > 0){
+    ?>
+<div class="col-3">
+    <div class="image">
+    <form method="post" action="cart.php?id=<?=$row['ID']?>">
+    <img src="images/<?=$row['photo']?>">
+    <h4><?=$row['Name'];?></h4>
+    <p><?=$row['price'];?> ريال</p>
+    <input type="number" name="quantity" class="input1" value="1" min="1" max=<?php echo $row["quantity"]?>>
+    <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]?>">
+    <input type="hidden" name="hidden_price" value="<?php echo $row["price"]?>">
+    <input type="submit" name="add" class="bottun1" value="اضف الى السلة" >
+</div>
+</form>
+</div>
+<?php }
+else {
+    ?>
+<div class="col-3">
+    <div class="image">
+    <img src="images/<?=$row['photo']?>">
+    <h4><?=$row['Name'];?></h4>
+    <p><?=$row['price'];?> ريال</p>
+    <input type="number" name="quantity" class="input1" value="<?php echo $row["quantity"]?>" min="0" max=<?php echo $row["quantity"]?>>
+    <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]?>">
+    <input type="hidden" name="hidden_price" value="<?php echo $row["price"]?>">
+    <button class="bottun1" style="font-size:15px; background:rgb(107, 57, 0);" >نفذت الكمية</button>
+</div> 
+</div>
+<?php
+}
+                     $i++;
                     } 
 
                     ?>                  
