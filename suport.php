@@ -83,7 +83,7 @@
 ?>
 
 <div class="col-2" style="margin-right:200px">
-<h2  style=" text-align:right;">صندوق الاقتراحات</h2>
+<h2  style=" text-align:right;">صندوق الشكاوي و الاقتراحات</h2>
 <br>
 <p  style="text-align:right;"><span> </span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
@@ -95,7 +95,7 @@
   <br>
 
   <br><br>
-  <p style="text-align:right;">اقتراحك؟</p>: <textarea name="comment"  style=" float:right; text-align:right;" rows="5" cols="40"></textarea>
+  <p style="text-align:right;">شكوى/اقتراحك؟</p>: <textarea name="comment"  style=" float:right; text-align:right;" rows="5" cols="40"></textarea>
   <br><br>
 
 
