@@ -11,9 +11,9 @@ if (isset($_GET["addressId"])){
     $addressId = $_GET["addressId"];
     $total = $_SESSION["total"];
 
-    createOrder($conn, $usersId, $addressId, $total);
+    createOrder($conn, $usersId, $addressId, $total);//انشاء طلب
 
-    $orderdata = getorderID($conn, $usersId, $addressId, $total);
+    $orderdata = getorderID($conn, $usersId, $addressId, $total);//اخذ رقم لبطلب
 
     if ($orderdata == false){
         header("location: ../admin_login.php?error=wronglogin");
@@ -26,7 +26,8 @@ if (isset($_GET["addressId"])){
 
     
 
-    //insert data
+
+    //ادخال الطلابات
     $sql = "INSERT INTO items_order (`orderID`,`productiD`,`Quantity`,`price`) VALUES (? ,? ,? ,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {

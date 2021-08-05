@@ -7,12 +7,12 @@ if (isset($_POST["sup"])){
     require 'dbh-inc.php';
     require 'functions-inc.php';
 
-    if (ADMemptyInputlogin($name, $pass) !== false) {
+    if (ADMemptyInputlogin($name, $pass) !== false) {//التاكد من المدخلات
         header("location: ../login.php?error=emptyinput");
         exit();
     }
 
-    ADMloginUser($conn, $name, $pass);
+    ADMloginUser($conn, $name, $pass);//ادخال الادمن
 }
 else {
     header("location: ../login.php");
