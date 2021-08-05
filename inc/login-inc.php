@@ -1,5 +1,5 @@
 <?php
-
+//login user if the user hit the button named "sup"
 if (isset($_POST["sup"])){
     $name = $_POST["name"];
     $pass = $_POST["pass"];

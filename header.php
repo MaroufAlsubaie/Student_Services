@@ -1,6 +1,7 @@
 <?php
 require 'inc/dbh-inc.php';
 session_start();
+//header of the web
 ?>
 
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 <?php
     include_once 'header.php';
-    
+    //adding to the cart if the user hit add button 
     if (isset($_POST["add"])){
         if (isset($_SESSION["cart"])){
             $item_array_id = array_column($_SESSION["cart"],"ID");

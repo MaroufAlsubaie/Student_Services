@@ -1,5 +1,6 @@
 <?php
     include_once 'header.php';
+    //about us
 ?>
 
             <div class="row">

@@ -1,5 +1,6 @@
 <?php
 include_once 'header.php';
+//here is the main page for admin where he control the web behined the sence
 
 if (isset($_SESSION["adminId"])){
     if (isset($_GET["DID"])){

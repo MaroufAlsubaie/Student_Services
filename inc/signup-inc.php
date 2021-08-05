@@ -1,5 +1,5 @@
 <?php
-
+//signup user if the user hit the button named "sup"
 if (isset($_POST["sup"])){
     $name = $_POST["name"];
     $email = $_POST["email"];

@@ -1,5 +1,5 @@
 <?php
-
+//link the database with the php
 $serberName = "localhost";
 $dBUsername = "root";
 $dBPassword = "";

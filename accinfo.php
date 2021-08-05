@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
 require 'inc/functions-inc.php';
+// here where user can revail his info 
 ?>
 
 <div class="container2">

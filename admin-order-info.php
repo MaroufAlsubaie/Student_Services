@@ -1,7 +1,7 @@
 <?php
 
 include 'header.php';
-
+//here where admin can see the orders info
 if (isset($_GET["orderID"])){ ?>
 <div class="container2">
 <div class="goods">

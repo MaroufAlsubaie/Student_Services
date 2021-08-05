@@ -3,6 +3,7 @@
     if (isset($_POST["confirm"])){
         echo '<script>window.location="addressList.php"</script>';
     }
+    // here where user choose address for checkout
     ?>
     
 <div class="container2">

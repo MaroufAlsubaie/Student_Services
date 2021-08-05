@@ -2,8 +2,9 @@
 require 'dbh-inc.php';
 require 'functions-inc.php';
 session_start();
+//create order 
 
-
+//check cart if it is empty
 if(!empty($_SESSION["cart"])){
 if (isset($_GET["addressId"])){
     $usersId = $_SESSION["usersId"];
@@ -25,7 +26,7 @@ if (isset($_GET["addressId"])){
 
     
 
-    
+    //insert data
     $sql = "INSERT INTO items_order (`orderID`,`productiD`,`Quantity`,`price`) VALUES (? ,? ,? ,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {

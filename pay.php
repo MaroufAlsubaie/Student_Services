@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-
+//here where user ends up after choose address to delviry the payment page
 ?>
 <br><br><br><br><br>
 

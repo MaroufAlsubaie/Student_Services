@@ -1,5 +1,6 @@
 <?php
     include_once 'header.php';
+    //here where user can see our product 
 ?>
 
         <div class="container2">

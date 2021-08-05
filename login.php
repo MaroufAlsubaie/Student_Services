@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!--here where user can login-->
   <head>
     <meta charset="UTF-8" />
     <title>STUDENT Service | Project of CTI Student</title>
@@ -46,7 +47,6 @@
 
             </div>
           </div>
-          <div class="pass-txt"><a href="#">نسيت رقمك السري؟</a></div>
           <input type="submit" name="sup" value="تسجيل الدخول" />
         </form>
         <div class="sign-txt">عضو جديد ؟ <a href="register.php">سجل الان</a></div>

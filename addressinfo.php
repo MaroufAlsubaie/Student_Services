@@ -1,6 +1,6 @@
 <?php
     include_once 'header.php';
-
+    // here where user can revail his address info
     ?>
     
 <div class="container2">
