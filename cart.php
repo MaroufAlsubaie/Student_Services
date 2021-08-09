@@ -1,12 +1,12 @@
 <?php
     include_once 'header.php';
-    //adding to the cart if the user hit add button 
+    //إضافة إلى سلة التسوق إذا قام المستخدم بالضغط على زر الإضافة
     if (isset($_POST["add"])){
         if (isset($_SESSION["cart"])){
             $item_array_id = array_column($_SESSION["cart"],"ID");
             $getid = $_GET["id"];
             if (!in_array($_GET["id"],$item_array_id)){
-                $count = count($_SESSION["cart"]);
+                $count = count($_SESSION["cart"]);    //تخزين المنتجات في دالة
                 $item_array = array(
                     'ID' => $_GET["id"],
                     'Name' => $_POST["hidden_name"],
@@ -30,7 +30,7 @@
         }
     }
 
-    if (isset($_GET["action"])){
+    if (isset($_GET["action"])){//حذف المنتج اذا تم الضغط على حذف
         if ($_GET["action"] == "delete"){
             foreach ($_SESSION["cart"] as $keys => $value){
                 if ($value["ID"] == $_GET["id"]){
@@ -62,7 +62,7 @@
 
         if(!empty($_SESSION["cart"])){
             $total = 0;
-            foreach ($_SESSION["cart"] as $key => $value) {
+            foreach ($_SESSION["cart"] as $key => $value) {//عرض المنتجات المضافة الى السلة
                 ?>
                 <tr>
                     <td class="td"><?php echo $value["Name"]; ?></td>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--here where admin can login-->
+  <!--هنا حيث يمكن للمسؤول تسجيل الدخول-->
   <head>
     <meta charset="UTF-8" />
     <title>STUDENT Service | Project of CTI Student</title>
@@ -16,7 +16,8 @@
         <form action="inc/admin_login-inc.php" method="POST">
           <div class="field email">
             <div class="input-area">
-              <input type="text" name="name" placeholder="اسم المستخدم" />
+              <!--ادخال معلومات الادمن-->
+              <input type="text" name="name" placeholder="اسم الادمن" /> 
               <i class="icon fas fa-envelope"></i>
               <i class="error error-icon fas fa-exclamation-circle"></i>
             </div>
@@ -27,14 +28,14 @@
               <i class="icon fas fa-lock"></i>
               <i class="error error-icon fas fa-exclamation-circle"></i>
             </div>
-
+            <!--اظهار خطاء اذا كان المدخل غير صحيح-->
             <div class="field error-txt"><?php
             if (isset($_GET["error"])){
               if ($_GET["error"] == "emptyinput"){
                 echo "الرجاء الدخال المعلومات";
               }
               else if ($_GET["error"] == "wronglogin"){
-                echo "اسم المستخدم أو رقم سري غير صحيح";
+                echo "اسم الادمن أو رقم سري غير صحيح";
               }
             }
             ?>

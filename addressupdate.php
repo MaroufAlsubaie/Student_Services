@@ -1,5 +1,5 @@
 <?php
-//UPDATE Address
+//تحديث العنوان
 if (isset($_POST["update"])){
     $contry = $_POST["contry"];
     $ctiy = $_POST["ctiy"];
@@ -10,7 +10,7 @@ if (isset($_POST["update"])){
     require 'inc/dbh-inc.php';
     require 'inc/functions-inc.php';
 
-    if (addressEmptyImpot($contry, $ctiy, $street, $pin, $phoneNum) !== false) {
+    if (addressEmptyImpot($contry, $ctiy, $street, $pin, $phoneNum) !== false) {// التاكد من عدم خلو المدخلات
         header("location: ../addressupdate.php?error=emptyinput");
         exit();
     }
@@ -29,12 +29,12 @@ if (isset($_POST["DEL"])){
 
 include 'header.php'; 
   $adiD= $_GET["addressId"];  
-  $addre="SELECT * FROM address WHERE addressiD= $adiD;";
-  $get12 = mysqli_query($conn,$addre);
+  $addre="SELECT * FROM address WHERE addressiD= $adiD;";// تعريف سطر استرجاع المعلومات من قاعدة البيانات
+  $get12 = mysqli_query($conn,$addre);// لاسترجاع المعلومات  addre اطلاق المتغير
 
   while($row = mysqli_fetch_assoc($get12)) {
       
-// SHOW address
+// إظهار العنوان
   ?>
   <div class="container2">
   <div class="col-3">
@@ -64,7 +64,7 @@ include 'header.php';
   </div>
   <?php
 }
-//DELETE Address
+//حذف العنوان
 if (isset($_POST["DEL"])){
     $adiD121= $_POST["hidden_address"];
     $addre12="DELETE FROM `address` WHERE `address`.`addressiD` = $adiD121";

@@ -1,6 +1,6 @@
 <?php
     include_once 'header.php';
-    //about us
+    //عرض صفحة من نحن
 ?>
 
             <div class="row">

@@ -1,6 +1,6 @@
 <?php
 include_once 'header.php';
-//here is the main page for admin where he control the web behined the sence
+//هذه هي الصفحة الرئيسية للمشرف حيث يتحكم في المتجر خلف الكواليس
 
 if (isset($_SESSION["adminId"])){
     if (isset($_GET["DID"])){
@@ -79,6 +79,8 @@ if (isset($_SESSION["adminId"])){
 <div class="goods">
 <div class="row">
 <h1 >الطلبات</h1>
+                                                              <!--عرض الطلبات -->
+
 <table style="width: 100%">
         <tr>
             <th  class="th"> usersName </th>
@@ -125,6 +127,8 @@ if (isset($_SESSION["adminId"])){
 <div class="goods">
 <div class="row">
     <h1>المنتجات</h1> 
+                                                              <!--عرض المنتجات -->
+
 <table style="width: 100%">
         <tr>
             <th  class="th"> ID </th>
@@ -154,6 +158,8 @@ if (isset($_SESSION["adminId"])){
                 if ($IDE == $row["ID"]){
                 ?>
                 <tr>
+                                                                                              <!--تعديل منتج -->
+
                     <form action="AdminUi.php" method="POST">
             <th  class="td"  style="padding-left: 5px; padding-right: 5px;"><?php echo $row["ID"]; ?><input name="ID" type="hidden" value="<?php echo $row["ID"];?>"></th>
             <th  style="padding-left: 5px; padding-right: 5px;" class="td"><input name="name" type="text" value="<?php echo $row["Name"] ?>"></th>
@@ -190,6 +196,8 @@ if (isset($_SESSION["adminId"])){
         
         <?php } ?>
         <tr>
+                                                                          <!--اضافة منتج -->
+
             <form action="AdminUi.php" method="POST">
             <th  class="td"></th>
             <th  style="padding-left: 5px; padding-right: 5px;" class="td"><input name="name" type="text"></th>
@@ -210,6 +218,8 @@ if (isset($_SESSION["adminId"])){
 <div class="container2">
 <div class="goods">
 <div class="row">
+                                                              <!--عرض الحسابات -->
+
     <h1>الحسابات</h1> 
 <table style="width: 100%">
         <tr>
@@ -237,6 +247,8 @@ if (isset($_SESSION["adminId"])){
                 if ($IDE == $row["usersId"]){
                 ?>
                 <tr>
+                                                                                      <!--تعديل حساب -->
+
                     <form action="AdminUi.php" method="POST">
             <th  class="td"  style="padding-left: 5px; padding-right: 5px;"><?php echo $row["usersId"]; ?><input name="usID" type="hidden" value="<?php echo $row["usersId"];?>"></th>
             <th  style="padding-left: 5px; padding-right: 5px;" class="td"><input name="nameU" type="text" value="<?php echo $row["usersName"]; ?>"></th>
@@ -267,6 +279,8 @@ if (isset($_SESSION["adminId"])){
         
         <?php } ?>
         <tr>
+                                                                                      <!--اضافة حساب -->
+
             <form action="AdminUi.php" method="POST">
             <th  class="td"></th>
             <th  style="padding-left: 5px; padding-right: 5px;" class="td"><input name="name" type="text"></th>

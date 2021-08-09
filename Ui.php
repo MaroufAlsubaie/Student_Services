@@ -28,7 +28,7 @@
                         break
                         ?>
                         <?php
-if($row["quantity"] > 0){
+if($row["quantity"] > 0){//عرض المنتجات
     ?>
 <div class="col-3">
     <div class="image">

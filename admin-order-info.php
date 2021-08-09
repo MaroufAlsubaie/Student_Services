@@ -1,7 +1,7 @@
 <?php
 
 include 'header.php';
-//here where admin can see the orders info
+//هنا حيث يمكن للمسؤول رؤية معلومات الطلبات
 if (isset($_GET["orderID"])){ ?>
 <div class="container2">
 <div class="goods">
@@ -19,7 +19,7 @@ if (isset($_GET["orderID"])){ ?>
     </tr>
 <?php
 $orderID = $_GET["orderID"];
-        $sql = "SELECT * FROM `orders` INNER JOIN users ON orders.usersId = users.usersId WHERE `orderID` = ? ORDER BY `orders`.`orderID` DESC;";
+        $sql = "SELECT * FROM `orders` INNER JOIN users ON orders.usersId = users.usersId WHERE `orderID` = ? ORDER BY `orders`.`orderID` DESC;";// تعريف سطر استرجاع المعلومات من قاعدة البيانات
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -33,6 +33,7 @@ $orderID = $_GET["orderID"];
         $resultData = mysqli_stmt_get_result($stmt);
         $row = mysqli_fetch_assoc($resultData)?>
         <tr>
+                          <!--عرض معلومات الطلب-->
         <th  class="td"> <?php echo $row["usersName"]; ?> </th>
         <th style="padding-left: 5px;" class="td"><?php echo $row["orderID"]; ?></th>
         <th style="padding-left: 40px; padding-right: 40px;" class="td"><?php echo $row["addressId"]; ?></th>
@@ -71,6 +72,7 @@ $orderID = $_GET["orderID"];
         $resultData = mysqli_stmt_get_result($stmt);
         while($row = mysqli_fetch_assoc($resultData)) { ?>
         <tr>
+                                      <!--عرض تفاصيل الطلب-->
             <th  class="td"><?php echo $row["Name"]; ?> </th>
             <th style="padding-left: 5px;" class="td"><?php echo $row["productiD"]; ?></th>
             <th style="padding-left: 40px; padding-right: 40px;" class="td"><?php echo $row["Quantity"]; ?></th>

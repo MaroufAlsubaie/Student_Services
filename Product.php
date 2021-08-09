@@ -1,14 +1,14 @@
 <?php
     include_once 'header.php';
-    //here where user can see our product 
+    //هنا حيث يمكن للمستخدم رؤية منتجاتنا
 ?>
 
         <div class="container2">
 
-<form class="example" action="product.php" method="GET"><!--search-->
+<form class="example" action="product.php" method="GET"><!--البحث-->
      <input type="text" name="search" placeholder="وش نبي تبحث عنه...؟" style="text-align:right;">
      <button  type="submit" style="padding: 2.5px;"><img src="images/search.png"></button>
-
+<!--الترتيب-->
      <select name="sort" style="margin-left:890px; margin-bottom:20px ;">
    <option value="">....الترتيب</option>
    <option value="">عادي</option>
@@ -18,7 +18,7 @@
    <option value="cba">من الياء للالف</option>
    </select>
 
-<?php //type
+<?php //فلتر الانواع
 $query_t ="SELECT * FROM `product` ORDER BY `product`.`type` DESC";
 $type_q = mysqli_query($conn,$query_t);
 $temp = "";
@@ -93,7 +93,7 @@ else $search='%'.'%';
        mysqli_stmt_execute($stmt);
        $resultData = mysqli_stmt_get_result($stmt);
        while($row = mysqli_fetch_assoc($resultData)) {
-        if($row["quantity"] > 0){
+        if($row["quantity"] > 0){//عرض المنتجات
         ?>
     <div class="col-3">
         <div class="image">

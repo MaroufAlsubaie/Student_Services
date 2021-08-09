@@ -18,9 +18,9 @@ require 'inc/functions-inc.php';
         <?php
         $useriD = $_SESSION["usersId"];
         $sql = "SELECT * FROM users WHERE usersId= $useriD ;";
-        $result = mysqli_query($conn,$sql); 
+        $result = mysqli_query($conn,$sql); //  سحب المعلومات من قاعدة البيانات
         
-        while($row = mysqli_fetch_assoc($result)) { ?>
+        while($row = mysqli_fetch_assoc($result)) { //  عرض المعلومات اللتي تم سحبها من قاعدة البيانات ?>
         <form action="accinfo.php" method="POST">
         <tr>
             <td class="td" style="padding-bottom:7px; padding-top:7px;" ><input type="text" name="username" placeholder="<?php echo $row["usersName"]; ?>" style="background:#f3c48659; text-align:center;" /></td> 
@@ -48,7 +48,7 @@ require 'inc/functions-inc.php';
   </html>
 <?php
 
-if (isset($_POST["1co"])){
+if (isset($_POST["1co"])){// هنا يتم تعديل اسم العميل في حال تم الضفط على زر التعديل
     if (isset($_POST["username"])){
     $na = $_POST["username"];  
     if($na !== "")  {
@@ -59,7 +59,7 @@ if (isset($_POST["1co"])){
     }
 
 }
-if (isset($_POST["email"])){
+if (isset($_POST["email"])){// هنا يتم تعديل ايميل العميل في حال تم الضفط على زر التعديل
     $ea = $_POST["email"];  
     if($ea !== "")  {
         $info_update ="UPDATE `users` SET `usersEmail` = '$ea' WHERE `users`.`usersId` = $useriD;";  
@@ -69,7 +69,7 @@ if (isset($_POST["email"])){
 }
 }
 
-if (isset($_POST["new-pass"])){
+if (isset($_POST["new-pass"])){// هنا يتم تعديل كلمة السر للعميل في حال تم الضفط على زر التعديل
     if (passMatch($_POST["new-pass"], $_POST["new-pass-2"]) !== false) {
         echo("passnotmatch");
         exit();

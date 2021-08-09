@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--here where user can login-->
+    <!--هنا حيث يمكن للمستخدم تسجيل الدخول-->
   <head>
     <meta charset="UTF-8" />
     <title>STUDENT Service | Project of CTI Student</title>
@@ -19,6 +19,7 @@
         }
         ?>
         <header>تسجيل الدخول</header>
+                      <!--ادخال معلومات المستخدم-->
         <form action="inc/login-inc.php" method="POST">
           <div class="field email">
             <div class="input-area">
@@ -33,7 +34,7 @@
               <i class="icon fas fa-lock"></i>
               <i class="error error-icon fas fa-exclamation-circle"></i>
             </div>
-
+            <!--اظهار خطاء اذا كان المدخل غير صحيح-->
             <div class="field error-txt"><?php
             if (isset($_GET["error"])){
               if ($_GET["error"] == "emptyinput"){

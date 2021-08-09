@@ -1,5 +1,5 @@
 <?php
-//create address if the user hit the button named "confirm"
+//أنشئ عنوانًا إذا ضغط المستخدم على الزر المسمى "confirm"
 session_start();
 if (isset($_POST["confirm"])){
     $contry = $_POST["contry"];

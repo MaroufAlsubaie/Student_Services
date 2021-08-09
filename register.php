@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-      <!--here where user can signup-->
+      <!--هنا حيث يمكن للمستخدم التسجيل-->
   <head>
     <meta charset="UTF-8" />
     <title>STUDENT Service | Project of CTI Student</title>
@@ -17,6 +17,7 @@
           <form action="inc/signup-inc.php" method="POST">
             <div class="field email">
                 <div class="input-area">
+                                  <!--ادخال بيانات المستخدم الجديد-->
                     <input type="text" name="name" placeholder="اسم المستخدم" />
                   </div>
             </div>
@@ -43,7 +44,7 @@
                   <i class="icon fas fa-lock"></i>
                   <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
-                
+                <!--اظهار االاخطاء ان وجد-->
                 <div class="field error-txt"><?php
             if (isset($_GET["error"])){
               if ($_GET["error"] == "emptyinput"){

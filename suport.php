@@ -35,7 +35,7 @@
             <div class="col-2">
 
 
-              <br>
+              <br><!--عرض انواع التواصل-->
             <h1 style=" text-align:right;">التواصل</h1>
                     <br>
                     </div>
@@ -79,9 +79,8 @@
                <?php $nameErr = $emailErr  = "";
                      $name = $email  = $comment = "";
 
-
+//عرض ادخال الشكاوى ولا الاقتراح
 ?>
-
 <div class="col-2" style="margin-right:200px">
 <h2  style=" text-align:right;">صندوق الشكاوي و الاقتراحات</h2>
 <br>

@@ -1,7 +1,7 @@
 <?php
 require 'inc/dbh-inc.php';
 session_start();
-//header of the web
+//رأس الصفحة
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +32,8 @@ session_start();
                 if (isset($_SESSION["usersId"])){
                     echo $_SESSION["usersName"];
                     ?> 
+                                       <!--عرض القائمة المنسدلة-->
+
                     <div class="dropdown"  >
                     <img src='images/account.png'  width= 35px>
                     <div class="dropdown-content" style="right:-30px;">

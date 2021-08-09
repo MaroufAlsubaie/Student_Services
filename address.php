@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-//create address page 
+//اضافة عنوان توصيل
 ?>
 
 <div class="container2">

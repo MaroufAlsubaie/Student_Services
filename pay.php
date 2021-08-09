@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-//here where user ends up after choose address to delviry the payment page
+//هنا ياتي المستخدم بعد اختيار عنوان التوصيل
 ?>
 <br><br><br><br><br>
 
@@ -17,7 +17,7 @@ include 'header.php';
         </tr>
 
         <?php
-
+//عرض معلومات الطلبات
         $usersId = $_SESSION["usersId"];
         $sql = "SELECT * FROM orders WHERE usersId= ? ORDER BY 'orderID' ASC;";
         $stmt = mysqli_stmt_init($conn);
