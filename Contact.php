@@ -7,7 +7,7 @@
                 <div class="col-2">
                 <br>
                 <br>
-                <h1 style=" text-align:right;">عننا</h1>
+                <h1 style=" text-align:right;">من نحن ؟</h1>
                 <br>                
                 <br>
                 <br>

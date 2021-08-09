@@ -52,7 +52,7 @@ if (isset($_GET["addressId"])){
         }
         mysqli_stmt_close($stmt);
         $_SESSION["cart"] = null;
-        header("location: ../pay.php");
+        header("location: ../pay.php?orderID=$orderID");
         exit();
 }}
 else {

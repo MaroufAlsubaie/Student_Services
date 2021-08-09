@@ -6,14 +6,36 @@ include 'header.php';
 
 <div class="container2">
 <div class="goods">
-<div class="row">
+<?php if (isset($_GET["orderID"])){
+$usersId = $_SESSION["usersId"];
+$sql = "SELECT * FROM orders WHERE usersId= ? ORDER BY 'orderID' ASC;";
+$stmt = mysqli_stmt_init($conn);
+if (!mysqli_stmt_prepare($stmt, $sql)) {
+    echo "error";
+    exit();
+}
+mysqli_stmt_bind_param($stmt, "i", $usersId);
+mysqli_stmt_execute($stmt);
+$resultData = mysqli_stmt_get_result($stmt);
 
+$row = mysqli_fetch_assoc($resultData);
+?>
+<div class="center">
+<h3>تم ارسال الطلب</h3>
+<h3>رقم طلبك <?php echo $row["orderID"]; ?></h3>
+<h3>و اجمالي طلبك <?php echo $row["total"]; ?> ريال </h3>
+<h3>يرجى تحويل المبلغ على الحساب البنكي</h3>
+</div>
+
+<?php
+}
+else { ?>
+<div class="row">
 <table style="width: 50%">
         <tr>
-            <th  class="th">orderiD</th>
-            <th style="padding-left: 5px; padding-right: 5px;" class="th">address</th>
-            <th style="padding-left: 40px; padding-right: 40px;" class="th">total</th>
-            <th style="padding-left: 30px; padding-right: 30px;" class="th">status</th>
+            <th  class="th">رقم الطلب</th>
+            <th style="padding-left: 40px; padding-right: 40px;" class="th">السعر</th>
+            <th style="padding-left: 30px; padding-right: 30px;" class="th">الحاله</th>
         </tr>
 
         <?php
@@ -34,13 +56,12 @@ include 'header.php';
 
         <tr>
             <td class="td"><?php echo $row["orderID"]; ?></td>
-            <td class="td"><?php echo $row["addressId"]; ?></td>
             <td class="td"><?php echo $row["total"]; ?> ريال</td>
             <td class="td"><?php echo $row["status"]; ?></td>
         </tr>
         <?php } ?>
     </table>
-   
+   <?php }?>
 </div>
 </div>
 </div>
