@@ -56,6 +56,7 @@ if (isset($_POST["1co"])){// هنا يتم تعديل اسم العميل في �
     
         $result123 = mysqli_query($conn,$info_update);
         echo '<script>window.location="accinfo.php"</script>';
+        $_SESSION["usersName"] = $_POST["username"];
     }
 
 }
@@ -79,9 +80,8 @@ if (isset($_POST["new-pass"])){// هنا يتم تعديل كلمة السر ل�
         echo("wrongPass");
         exit();
     }
-
     $hashedpass = $nameExitsts["usersPass"];
-    $checkpass = password_verify($_POST["new-pass"], $hashedpass);
+    $checkpass = password_verify($_POST["old-pass"], $hashedpass);
 
     if ($checkpass == false){
         echo("wrongPassH");
@@ -97,10 +97,10 @@ if (isset($_POST["new-pass"])){// هنا يتم تعديل كلمة السر ل�
         }
         $hashedpass = password_hash($_POST["new-pass"], PASSWORD_DEFAULT);
 
-        mysqli_stmt_bind_param($stmt, "si", $hashedpass, $_SESSION["usersId"]);
+        mysqli_stmt_bind_param($stmt, "si", $hashedpass, $nameExitsts["usersId"]);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
-
+        echo "password changed";
     }
 }
 }
