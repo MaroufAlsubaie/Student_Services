@@ -76,7 +76,7 @@ $orderID = $_GET["orderID"];
             <th  class="td"><?php echo $row["Name"]; ?> </th>
             <th style="padding-left: 5px;" class="td"><?php echo $row["productiD"]; ?></th>
             <th style="padding-left: 40px; padding-right: 40px;" class="td"><?php echo $row["Quantity"]; ?></th>
-            <th style="padding-left: 40px; padding-right: 40px;" class="td"><?php echo $row["price"]; ?></th>
+            <th style="padding-left: 40px; padding-right: 40px;" class="td"><?php echo ($row["price"]*$row["Quantity"]); ?></th>
         </tr>
             </tr>
             <?php }mysqli_stmt_close($stmt); ?>
