@@ -13,7 +13,7 @@ if (isset($_GET["addressId"])){
 
     createOrder($conn, $usersId, $addressId, $total);//انشاء طلب
 
-    $orderdata = getorderID($conn, $usersId, $addressId, $total);//اخذ رقم لبطلب
+    $orderdata = getorderID($conn, $usersId, $addressId, $total);//اخذ رقم الطلب
 
     if ($orderdata == false){
         header("location: ../admin_login.php?error=wronglogin");

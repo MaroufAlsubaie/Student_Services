@@ -9,7 +9,7 @@ function emptyInputSignup($name, $email, $pas, $pasRep) {
 
 function invalidUid($name){
     $result;
-    if (!preg_match("/^[a-zA-z0-9]*$/", $name)) $result = true;
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $name)) $result = true;
     else $result = false;
     return $result;
 }
