@@ -2,6 +2,8 @@
 include 'header.php';
 //هنا ياتي المستخدم بعد اختيار عنوان التوصيل
 ?>
+        <link rel="stylesheet" href="Style.css?version=13">
+
 <br><br><br><br><br>
 
 <div class="container2">
@@ -54,18 +56,19 @@ else { ?>
         $resultData = mysqli_stmt_get_result($stmt);
 
         while($row = mysqli_fetch_assoc($resultData)) { ?>
-
-
+<form action="inc/progress.php" method="post">
         <tr>
             <td class="td"><?php echo $row["orderID"]; ?></td>
             <td class="td"><?php echo $row["total"]; ?> ريال</td>
             <td class="td"><?php echo $row["status"]; ?></td>
-            <td class="td"><input type="file" id="files" class="hidden" style="display:none;"/><label for="files">Click me</label></td>
+            <td class="td"><input type="file" id="file" class="files" accept="image/*,.pdf" required/><label class="files-l" for="file">Click me</label></td>
         </tr>
         <?php } ?>
     </table>
    <?php }?>
 </div>
+<button class="send-file" name="send-file">Send</button>
+</form>
 </div>
 </div>
 
@@ -80,3 +83,4 @@ else { ?>
     
 </div>
  <br><br><br><br><br>
+ 

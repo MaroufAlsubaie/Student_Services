@@ -217,3 +217,6 @@ function getorderID($conn, $usersId, $addressId, $total){
     }
     mysqli_stmt_close($stmt);
 }
+function send_file($conn, $usersId,$orderid){
+
+}

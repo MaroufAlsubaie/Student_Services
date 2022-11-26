@@ -289,6 +289,7 @@ table, th, tr{
 }
 .td{
     background-color: #8a56123b;
+    height: 5px;
 }
 .dropdown {
     position: relative;
@@ -318,3 +319,20 @@ table, th, tr{
   .center {
     text-align: center;
   }
+  .files{
+    display:none;  
+  }
+  .files-l:hover{
+    background-color: rgba(158, 123, 58, 0.712);
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+.send-file{
+    margin-left: 700px;
+    margin-top: 20px;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #f1f1f1;
+    background-color: #f3d7ae;
+}

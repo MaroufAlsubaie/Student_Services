@@ -98,7 +98,7 @@ else $search='%'.'%';
     <div class="col-3">
         <div class="image">
         <form method="post" action="cart.php?id=<?=$row['ID']?>">
-        <img src="images/<?=$row['photo']?>">
+        <img src="images/<?=$row['photo']?>.png">
         <h4><?=$row['Name'];?></h4>
         <p><?=$row['price'];?> ريال</p>
         <input type="number" name="quantity" class="input1" value="1" min="1" max=<?php echo $row["quantity"]?>>
@@ -113,7 +113,7 @@ else $search='%'.'%';
         ?>
     <div class="col-3">
         <div class="image">
-        <img src="images/<?=$row['photo']?>">
+        <img src="images/<?=$row['photo']?>.png">
         <h4><?=$row['Name'];?></h4>
         <p><?=$row['price'];?> ريال</p>
         <input type="number" name="quantity" class="input1" value="<?php echo $row["quantity"]?>" min="0" max=<?php echo $row["quantity"]?>>

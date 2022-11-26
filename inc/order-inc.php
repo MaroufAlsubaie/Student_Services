@@ -27,7 +27,7 @@ if (isset($_GET["addressId"])){
     
 
 
-    //ادخال الطلابات
+    //ادخال الطلبات
     $sql = "INSERT INTO items_order (`orderID`,`productiD`,`Quantity`,`price`) VALUES (? ,? ,? ,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
