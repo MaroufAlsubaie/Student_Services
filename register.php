@@ -60,7 +60,7 @@
                 echo "الرقم السري لا يتطابق";
               }
               else if ($_GET["error"] == "nametaken"){
-                echo "اسم المستخدم ماخوذ";
+                echo "الاسم المدخل مستخدم بالفعل";
               }
               else if ($_GET["error"] == "stmtfailed"){
                 echo "خطأ في إرسال المعلومات";

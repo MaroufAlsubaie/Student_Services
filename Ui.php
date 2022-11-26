@@ -2,13 +2,13 @@
     include_once 'header.php';
     //first page 
 ?>
-    <form class="example" action="product.php" style="width: 1080px; ; margin-left: 435px; padding-right: 30px;" method="get">
+    <form class="example" action="product.php" style="width: 1080px; ; margin-left: 250px; padding-right: 30px;" method="get">
         <input type="text" name="search" style="padding: 10px; text-align:right;" placeholder="وش نبي تبحث عنه...؟">
         <button type="submit" name="submit-search" style="padding: 2.5px;"><img src="images/search.png"><i class="fa fa-search"></i></button>
       </form> 
     <div class="row">
         <div class="col-2">
-            <h1>فيه كتاب ما لقيتة ؟</h1>
+            <h1>فيه كتاب ما لقيته ؟</h1>
             <p>موقعنا راح يوفر لك مجموعة متنوعة من الكتب <br> والروايات الحصرية</p>
             <p><a href="Product.php" class="bottun">شوف الخيارات</a></p>
         </div>

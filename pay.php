@@ -6,9 +6,10 @@ include 'header.php';
 
 <div class="container2">
 <div class="goods">
-<?php if (isset($_GET["orderID"])){
+<?php 
+if (isset($_GET["orderID"])){
 $usersId = $_SESSION["usersId"];
-$sql = "SELECT * FROM orders WHERE usersId= ? ORDER BY 'orderID' ASC;";
+$sql = "SELECT * FROM orders WHERE usersId=? ORDER BY `orders`.`orderID` DESC;";
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
     echo "error";
@@ -36,6 +37,7 @@ else { ?>
             <th  class="th">رقم الطلب</th>
             <th style="padding-left: 40px; padding-right: 40px;" class="th">السعر</th>
             <th style="padding-left: 30px; padding-right: 30px;" class="th">الحاله</th>
+            <th style="padding-left: 30px; padding-right: 30px;" class="th">ارفق الايصال</th>
         </tr>
 
         <?php
@@ -58,6 +60,7 @@ else { ?>
             <td class="td"><?php echo $row["orderID"]; ?></td>
             <td class="td"><?php echo $row["total"]; ?> ريال</td>
             <td class="td"><?php echo $row["status"]; ?></td>
+            <td class="td"><input type="file" id="files" class="hidden" style="display:none;"/><label for="files">Click me</label></td>
         </tr>
         <?php } ?>
     </table>
@@ -68,11 +71,11 @@ else { ?>
 
 <br><br><br><br>
 <div class="bank">
-    <img  src="images/alrajhi" >
-    <h2>IPAN:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h2>
+    <img  src="images/alrajhi.png" >
+    <h2>IBAN:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h2>
     <br><br><br><br>
-    <img  src="images/alahli" >
-    <h2>IPAN:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h2>
+    <img  src="images/alahli.png" >
+    <h2>IBAN:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h2>
 
     
 </div>
