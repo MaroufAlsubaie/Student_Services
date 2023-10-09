@@ -40,6 +40,7 @@ session_start();
                         <p style="text-align:right;">
                         <a href="accinfo.php">عرض المعلومات</a>
                         <a href="pay.php">عرض الطلبات</a>
+                        <a href="send-check.php">ارسال الايصال</a>
                         <a href="addressinfo.php">عرض عناوين التوصيل</a>
                         <a href="inc/logout.php">تسجيل الخروج</a>
                     </p>

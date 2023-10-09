@@ -336,3 +336,8 @@ table, th, tr{
     border-color: #f1f1f1;
     background-color: #f3d7ae;
 }
+.center1{
+    margin-left: auto;
+    margin-right: auto;
+    
+  }

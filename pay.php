@@ -58,16 +58,16 @@ else { ?>
         while($row = mysqli_fetch_assoc($resultData)) { ?>
 <form action="inc/progress.php" method="post">
         <tr>
-            <td class="td"><?php echo $row["orderID"]; ?></td>
+            <td class="td"><input type="hidden" name="hidden_orderID" value="<?php echo $row["orderID"]; ?>"><?php echo $row["orderID"]; ?></td>
             <td class="td"><?php echo $row["total"]; ?> ريال</td>
             <td class="td"><?php echo $row["status"]; ?></td>
-            <td class="td"><input type="file" id="file" class="files" accept="image/*,.pdf" required/><label class="files-l" for="file">Click me</label></td>
+            <td class="td"><input type="file" id="file" name="file_input" class="files" accept="image/*,.pdf" required/><label class="files-l" for="file">Click me</label></td>
         </tr>
         <?php } ?>
     </table>
-   <?php }?>
 </div>
-<button class="send-file" name="send-file">Send</button>
+<button class="send-file" name="sendfile" type="submit">Send</button>
+<?php }?>
 </form>
 </div>
 </div>
